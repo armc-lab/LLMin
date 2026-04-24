@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>配置测试</title>
+</head>
+
+<body>
+    <h1>配置测试页面</h1>
+    <button onclick="testConfig()">测试CONFIG</button>
+    <div id="output"></div>
+
+    <script src="js/config.js"></script>
+    <script>
+        function testConfig() {
+            const output = document.getElementById('output');
+            console.log('CONFIG对象:', CONFIG);
+
+            output.innerHTML = `
+                <h3>配置测试结果:</h3>
+                <p>CONFIG存在: ${typeof CONFIG !== 'undefined'}</p>
+                <p>CONFIG.api存在: ${typeof CONFIG?.api !== 'undefined'}</p>
+                <p>CONFIG.api.endpoints存在: ${typeof CONFIG?.api?.endpoints !== 'undefined'}</p>
+                <p>documentAnalyze端点: ${CONFIG?.api?.endpoints?.documentAnalyze}</p>
+                <pre>${JSON.stringify(CONFIG, null, 2)}</pre>
+            `;
+        }
+
+        // 页面加载时自动测试
+        window.onload = testConfig;
+    </script>
+</body>
+
+</html>

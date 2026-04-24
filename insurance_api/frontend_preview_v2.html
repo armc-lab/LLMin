@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>保险审核助手 - 预览版</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --text-soft: #6b7280;
+      --primary: #0f766e;
+      --primary-weak: #e6f4f1;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --border: #e5e7eb;
+      --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 0 0, #f0f7f5, var(--bg) 35%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: linear-gradient(120deg, #0f766e, #115e59);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .header p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #d1fae5;
+    }
+
+    .status-pill {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .layout {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .upload-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .chip-wrap {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 999px;
+      font-size: 13px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--primary);
+      background: var(--primary-weak);
+      transform: translateY(-1px);
+    }
+
+    .textarea {
+      width: 100%;
+      min-height: 90px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-primary:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    .btn-ghost {
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .meta {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .answer-card {
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      background: #fcfffe;
+      animation: fade-in 0.22s ease;
+    }
+
+    .answer-title {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .answer-text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      white-space: pre-wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-hit {
+      color: #166534;
+      background: #dcfce7;
+      border: 1px solid #86efac;
+    }
+
+    .badge-miss {
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+    }
+
+    .list {
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #fff;
+      padding: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .item small {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-soft);
+    }
+
+    .hint {
+      margin-top: 10px;
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .error {
+      margin-top: 10px;
+      color: var(--danger);
+      font-size: 13px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>保险审核助手</h1>
+        <p>基于合同条款的可追溯问答</p>
+      </div>
+      <div id="globalStatus" class="status-pill">状态：等待上传合同</div>
+    </header>
+
+    <div class="layout">
+      <main>
+        <section class="panel">
+          <h2>1. 上传合同</h2>
+          <div class="upload-row">
+            <input id="fileInput" type="file" accept=".pdf,.txt" />
+            <button id="uploadBtn" class="btn btn-primary">上传并分析</button>
+          </div>
+          <div id="uploadMeta" class="meta">支持 PDF / TXT。上传后自动生成摘要和推荐关键词。</div>
+          <div id="keywordWrap" class="chip-wrap"></div>
+          <div id="uploadError" class="error" style="display:none;"></div>
+        </section>
+
+        <section class="panel" style="margin-top:16px;">
+          <h2>2. 智能问答</h2>
+          <textarea id="questionInput" class="textarea" placeholder="请输入你的问题，例如：轻症赔付后重疾保额是否变化？"></textarea>
+          <div class="actions">
+            <button id="askBtn" class="btn btn-primary">发送问题</button>
+            <button id="archiveBtn" class="btn btn-ghost">生成会话归档</button>
+          </div>
+          <div id="chatError" class="error" style="display:none;"></div>
+
+          <article id="answerBox" class="answer-card" style="display:none;">
+            <h3 class="answer-title">回答结果</h3>
+            <p id="answerText" class="answer-text"></p>
+          </article>
+        </section>
+      </main>
+
+      <aside>
+        <section class="panel">
+          <h2>证据与建议</h2>
+          <div id="hitBadge" class="badge badge-miss">未命中原文</div>
+
+          <div class="hint">引用片段</div>
+          <ul id="citationList" class="list"></ul>
+
+          <div class="hint">下一步建议</div>
+          <ul id="recommendList" class="list"></ul>
+        </section>
+
+        <section class="panel" style="margin-top:16px;">
+          <h2>会话归档预览</h2>
+          <div id="archiveOutput" class="meta">点击“生成会话归档”后，这里会显示摘要内容。</div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const state = {
+      documentId: '',
+      baseUrl: '',
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function setGlobalStatus(text) {
+      $("globalStatus").textContent = `状态：${text}`;
+    }
+
+    function setError(id, msg) {
+      const el = $(id);
+      if (!msg) {
+        el.style.display = "none";
+        el.textContent = "";
+        return;
+      }
+      el.style.display = "block";
+      el.textContent = msg;
+    }
+
+    function renderKeywords(keywords = []) {
+      const wrap = $("keywordWrap");
+      wrap.innerHTML = "";
+      keywords.forEach((kw) => {
+        const btn = document.createElement("button");
+        btn.className = "chip";
+        btn.textContent = kw;
+        btn.onclick = () => {
+          const q = $("questionInput");
+          q.value = `请根据合同说明：${kw} 的理赔规则是什么？`;
+          q.focus();
+        };
+        wrap.appendChild(btn);
+      });
+    }
+
+    function renderCitations(citations = []) {
+      const list = $("citationList");
+      list.innerHTML = "";
+      if (!citations.length) {
+        list.innerHTML = '<li class="item">暂无引用片段</li>';
+        return;
+      }
+      citations.forEach((c) => {
+        const li = document.createElement("li");
+        li.className = "item";
+        li.innerHTML = `${c.text || ""}<small>片段 #${c.index ?? "-"} · 评分 ${c.score ?? "-"}</small>`;
+        list.appendChild(li);
+      });
+    }
+
+    function renderRecommendations(recommendations = []) {
+      const list = $("recommendList");
+      list.innerHTML = "";
+      if (!recommendations.length) {
+        list.innerHTML = '<li class="item">暂无建议</li>';
+        return;
+      }
+      recommendations.forEach((r) => {
+        const li = document.createElement("li");
+        li.className = "item";
+        li.textContent = r;
+        list.appendChild(li);
+      });
+    }
+
+    function updateHitBadge(status) {
+      const badge = $("hitBadge");
+      if (status === "hit") {
+        badge.className = "badge badge-hit";
+        badge.textContent = "已命中合同原文";
+      } else {
+        badge.className = "badge badge-miss";
+        badge.textContent = "未命中原文，建议补充条件";
+      }
+    }
+
+    async function postJson(path, payload) {
+      const base = state.baseUrl || window.location.origin;
+      const resp = await fetch(base + path, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) {
+        throw new Error(data.detail || data.error || `请求失败(${resp.status})`);
+      }
+      return data;
+    }
+
+    $("uploadBtn").onclick = async () => {
+      setError("uploadError", "");
+      const file = $("fileInput").files[0];
+      if (!file) {
+        setError("uploadError", "请先选择文件。");
+        return;
+      }
+
+      const fd = new FormData();
+      fd.append("file", file);
+
+      try {
+        setGlobalStatus("正在上传并分析合同");
+        const base = state.baseUrl || window.location.origin;
+        const resp = await fetch(base + "/api/v1/documents/analyze", {
+          method: "POST",
+          body: fd,
+        });
+        const data = await resp.json().catch(() => ({}));
+        if (!resp.ok || !data.success) {
+          throw new Error(data.detail || data.error || "上传分析失败");
+        }
+
+        const d = data.data || {};
+        state.documentId = d.document_id || "";
+        $("uploadMeta").innerHTML = `文档：<b>${d.filename || "-"}</b><br/>摘要：${d.summary || "-"}<br/>文档ID：${state.documentId || "-"}`;
+        renderKeywords(d.suggested_keywords || []);
+        setGlobalStatus("合同已就绪，可以提问");
+      } catch (err) {
+        setError("uploadError", err.message || "上传失败");
+        setGlobalStatus("上传失败");
+      }
+    };
+
+    $("askBtn").onclick = async () => {
+      setError("chatError", "");
+      const q = $("questionInput").value.trim();
+      if (!state.documentId) {
+        setError("chatError", "请先上传合同后再提问。");
+        return;
+      }
+      if (!q) {
+        setError("chatError", "请输入问题。");
+        return;
+      }
+
+      try {
+        setGlobalStatus("正在检索条款并生成回答");
+        const data = await postJson("/api/v1/chat/completions", {
+          document_id: state.documentId,
+          question: q,
+        });
+        const d = data.data || {};
+        $("answerBox").style.display = "block";
+        $("answerText").textContent = d.answer || "";
+
+        updateHitBadge(d.status || "miss");
+        renderCitations(d.citations || []);
+        renderRecommendations(d.recommendations || []);
+
+        setGlobalStatus("回答已生成");
+      } catch (err) {
+        setError("chatError", err.message || "问答失败");
+        setGlobalStatus("问答失败");
+      }
+    };
+
+    $("archiveBtn").onclick = async () => {
+      setError("chatError", "");
+      if (!state.documentId) {
+        setError("chatError", "请先上传合同并发起至少一次问答。");
+        return;
+      }
+      try {
+        setGlobalStatus("正在生成归档报告");
+        const data = await postJson("/api/v1/archive/generate-and-submit", {
+          document_id: state.documentId,
+          archive_type: "session_summary",
+        });
+        const payload = data.archive_payload || {};
+        $("archiveOutput").textContent = payload.generated_report_markdown || "未返回归档内容";
+        setGlobalStatus("归档报告已生成");
+      } catch (err) {
+        setError("chatError", err.message || "归档失败");
+        setGlobalStatus("归档失败");
+      }
+    };
+  </script>
+</body>
+</html>

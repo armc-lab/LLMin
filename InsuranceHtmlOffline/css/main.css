@@ -1,0 +1,20 @@
+/* =================================================================
+   保险合同解释助手 - 主样式文件
+   模块化CSS架构
+   ================================================================= */
+
+/* 基础样式和变量 */
+@import url('./base.css');
+
+/* 组件模块 */
+@import url('./sidebar.css');
+@import url('./main-content.css');
+@import url('./chat-input.css');
+@import url('./chat.css');
+@import url('./upload.css');
+
+/* 响应式设计 */
+@import url('./responsive.css');
+
+/* 工具类和动画 */
+@import url('./utilities.css');

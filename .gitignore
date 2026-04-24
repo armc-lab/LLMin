@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Runtime artifacts
+logs/
+*.log
+pids.txt
+
+# Model weights and large artifacts
+*.bin
+*.pt
+*.safetensors
+*.tar.gz
+*.zip
+
+# HuggingFace / model tokenizer artifacts often regenerated
+*.model
+
+# Local gradio state
+.gradio/

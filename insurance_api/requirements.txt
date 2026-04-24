@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+httpx
+vllm
+python-multipart
+PyMuPDF
+numpy
+# faiss-cpu          # 已迁移到 Chroma
+chromadb            # 新增：向量数据库
+sentence-transformers

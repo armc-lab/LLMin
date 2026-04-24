@@ -1,0 +1,1802 @@
+[
+  {
+    "name": "告知义务拒赔-001",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本001，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-002",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本002，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-003",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本003，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-004",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本004，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-005",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本005，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-006",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本006，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-007",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本007，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-008",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本008，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-009",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本009，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-010",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本010，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-011",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本011，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-012",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本012，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-013",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本013，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-014",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本014，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-015",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本015，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-016",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本016，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-017",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本017，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-018",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本018，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-019",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本019，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-020",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本020，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-021",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本021，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-022",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本022，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-023",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本023，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-024",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本024，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-025",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本025，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-026",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本026，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-027",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本027，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-028",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本028，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-029",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本029，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-030",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本030，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-031",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本031，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-032",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本032，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-033",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本033，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-034",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本034，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-035",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本035，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-036",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本036，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-037",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本037，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-038",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本038，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-039",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本039，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-040",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本040，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-041",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本041，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-042",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本042，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-043",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本043，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-044",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本044，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-045",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本045，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-046",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本046，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-047",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本047，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-048",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本048，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-049",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本049，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-050",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本050，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-051",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本051，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-052",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本052，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-053",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本053，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-054",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本054，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-055",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本055，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-056",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本056，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-057",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本057，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-058",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本058，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-059",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本059，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-060",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本060，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-061",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本061，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-062",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本062，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-063",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本063，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-064",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本064，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-065",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本065，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-066",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本066，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-067",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本067，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-068",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本068，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-069",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本069，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-070",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本070，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-071",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本071，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-072",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本072，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-073",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本073，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-074",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本074，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-075",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本075，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-076",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本076，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-077",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本077，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-078",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本078，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-079",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本079，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-080",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本080，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-081",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本081，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-082",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本082，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-083",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本083，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-084",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本084，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-085",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本085，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-086",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本086，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-087",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本087，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-088",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本088，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-089",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本089，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-090",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本090，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-091",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本091，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-092",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本092，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-093",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本093，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-094",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本094，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-095",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本095，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-096",
+    "document_path": "test_contract.pdf",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？（样本096，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-097",
+    "document_path": "test_contract.pdf",
+    "question": "投保人没有履行如实告知义务，保险公司可否拒赔？（样本097，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-098",
+    "document_path": "test_contract.pdf",
+    "question": "请说明未如实告知健康情况时的理赔责任判断。（样本098，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-099",
+    "document_path": "test_contract.pdf",
+    "question": "在如实告知条款下，未告知病史会造成什么理赔后果？（样本099，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  },
+  {
+    "name": "告知义务拒赔-100",
+    "document_path": "test_contract.pdf",
+    "question": "依据合同，隐瞒既往病史是否可能触发拒赔？（样本100，主题:告知义务拒赔）",
+    "expected": {
+      "status": "hit",
+      "citation_keywords": [
+        "如实告知",
+        "明确说明",
+        "11.6"
+      ],
+      "answer_keywords": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ]
+    }
+  }
+]

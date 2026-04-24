@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="智能保险合同解释助手，帮助你理解合同条款，解答相关问题" />
+    <meta name="keywords" content="保险合同,合同解释,AI助手,保险条款" />
+    <title>保险合同解释助手</title>
+
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="css/main.css" as="style" />
+    <link rel="preload" href="js/config.js" as="script" />
+    <link rel="preload" href="js/main.js" as="script" />
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/evidence-detail.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://api.iconify.design/emojione-monotone:robot-face.svg" type="image/svg+xml" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside>
+            <!-- 顶部 Logo / 收起按钮 -->
+            <div class="logo-box">
+                <img src="icon/robot.svg" alt="logo" id="logoIcon" style="cursor: pointer;" />
+                <span class="panel-title">操作面板</span>
+                <span class="collapse-btn" id="collapseToggle">«</span>
+            </div>
+
+            <!-- 功能按钮 -->
+            <button class="menu-btn" id="uploadBtn">
+                <img src="https://api.iconify.design/tabler:upload.svg?color=white" alt="upload" class="btn-icon" />
+                上传合同文档
+            </button>
+            <button class="menu-btn" id="askBtn">
+                <img src="https://api.iconify.design/tabler:message-circle.svg?color=white" alt="ask"
+                    class="btn-icon" />
+                提问
+            </button>
+            <button class="menu-btn" id="evidenceBtn">
+                <img src="icon/save-white.svg" alt="evidence" class="btn-icon" />
+                存证
+            </button>
+
+            <!-- 历史对话内容区域 -->
+            <div class="history-content">
+                <div class="placeholder">暂无历史对话</div>
+            </div>
+
+            <!-- 存证记录 -->
+            <div class="evidence-section">
+                <div class="evidence-title">存证记录</div>
+                <div class="placeholder">暂无记录</div>
+            </div>
+
+            <!-- 登录信息 -->
+            <div class="profile">
+                <img src="icon/profile.svg" alt="profile" class="btn-icon" />
+                <span>个人信息</span>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main>
+            <div class="welcome" id="welcomeArea">
+                <div class="welcome-header">
+                    <img src="icon/robot.svg" alt="bot" />
+                    <h1>我是保险合同解释助手，很高兴见到你！</h1>
+                </div>
+                <p>我可以回答合同相关的基础问题、解析合同文件，请把你的任务交给我吧~</p>
+            </div>
+
+            <!-- 上传合同文档页面 -->
+            <div class="upload-page" id="uploadPage" style="display: none;">
+                <div class="upload-content">
+                    <!-- 顶部图标和标题 -->
+                    <div class="upload-header">
+                        <div class="upload-icon-circle">
+                            <img src="https://api.iconify.design/tabler:cloud-upload.svg?color=%2322c55e" alt="upload"
+                                class="upload-header-icon" />
+                        </div>
+                        <h2>上传合同文档</h2>
+                        <p class="upload-description">将你的保险合同文档上传到这里，我们的AI助手将帮助你分析和理解合同内容</p>
+                    </div>
+
+                    <!-- 上传区域 -->
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-placeholder" id="uploadPlaceholder">
+                            <img src="https://api.iconify.design/tabler:upload.svg?color=%23999" alt="upload"
+                                class="upload-placeholder-icon" />
+                            <p class="upload-main-text">点击上传文档或拖拽到此处</p>
+                            <p class="file-hint">支持 PDF、Word、TXT 等格式，最大 10MB</p>
+                        </div>
+
+                        <!-- 文件预览区域 -->
+                        <div class="file-preview" id="filePreview" style="display: none;">
+                            <div class="file-preview-header">已选择的文件</div>
+                            <div class="file-item">
+                                <div class="file-icon">
+                                    <img src="https://api.iconify.design/vscode-icons:file-type-pdf2.svg" alt="pdf"
+                                        class="file-type-icon" />
+                                </div>
+                                <div class="file-info">
+                                    <div class="file-name" id="fileName">文件名.pdf</div>
+                                    <div class="file-details">
+                                        <span class="file-type" id="fileType">PDF文档</span>
+                                        <span class="file-size" id="fileSize">1.2 MB</span>
+                                    </div>
+                                </div>
+                                <button class="file-remove" id="fileRemove">×</button>
+                            </div>
+
+                            <!-- 重新选择按钮 -->
+                            <div class="file-reselect-actions">
+                                <button class="btn-reselect" id="reselectFileBtn">重新选择</button>
+                            </div>
+                        </div>
+
+                        <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png"
+                            style="display: none;" />
+                    </div>
+
+                    <!-- 按钮区域 -->
+                    <div class="upload-actions">
+                        <button class="btn-upload" id="selectFileBtn">选择文件</button>
+                    </div>
+
+                    <!-- 底部操作按钮 -->
+                    <div class="upload-bottom-actions">
+                        <button id="confirmUpload">确认上传</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 对话页面 -->
+            <div class="chat-page" id="chatPage" style="display: none;">
+                <div class="chat-container">
+                    <!-- 对话头部 -->
+                    <div class="chat-header">
+                        <h3 class="chat-title" id="chatTitle">XX公司（2025）重大疾病保险合同.pdf</h3>
+                    </div>
+
+                    <!-- 对话内容区域 -->
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="welcome-message">
+                            <div class="bot-avatar">
+                                <img src="icon/robot.svg" alt="bot" />
+                            </div>
+                            <div class="message-content">
+                                <p>你好！我是你的保险合同解释助手，我可以帮助你分析和理解保险合同的各项条款。请告诉我你想了解的问题吧！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 存证详情页面 -->
+            <div class="evidence-detail-page" id="evidenceDetailPage" style="display: none;">
+                <div class="evidence-detail-container">
+                    <!-- 存证详情头部 -->
+                    <div class="evidence-detail-header">
+                        <button class="back-btn" id="backFromEvidence" title="返回">
+                            <img src="https://api.iconify.design/tabler:arrow-left.svg?color=%23374151" alt="back" />
+                        </button>
+                        <h3 class="evidence-detail-title" id="evidenceDetailTitle">存证记录详情</h3>
+                    </div>
+
+                    <!-- 存证基本信息 -->
+                    <div class="evidence-info-card">
+                        <div class="evidence-info-row">
+                            <span class="evidence-info-label">记录ID：</span>
+                            <span class="evidence-info-value" id="evidenceId">-</span>
+                        </div>
+                        <div class="evidence-info-row">
+                            <span class="evidence-info-label">提交时间：</span>
+                            <span class="evidence-info-value" id="evidenceTime">-</span>
+                        </div>
+                    </div>
+
+                    <!-- 审核状态栏 -->
+                    <div class="evidence-status-card">
+                        <div class="evidence-status-header">
+                            <span class="evidence-status-title">审核状态</span>
+                        </div>
+                        <div class="evidence-status-content">
+                            <div class="evidence-status-indicator">
+                                <span class="status-badge" id="evidenceStatus">待审核</span>
+                            </div>
+                        </div>
+                        <!-- 审核进度条 - 横向布局，放在状态下方 -->
+                        <div class="evidence-progress horizontal" id="evidenceProgress" style="display: none;">
+                            <div class="progress-container">
+                                <div class="progress-step" id="step1">
+                                    <div class="step-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">用户审核提交</div>
+                                        <div class="step-time">已完成</div>
+                                    </div>
+                                </div>
+                                <div class="progress-line" id="line1"></div>
+                                <div class="progress-step" id="step2">
+                                    <div class="step-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">保险公司审核</div>
+                                        <div class="step-time">处理中...</div>
+                                    </div>
+                                </div>
+                                <div class="progress-line" id="line2"></div>
+                                <div class="progress-step" id="step3">
+                                    <div class="step-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">公证公司审核</div>
+                                        <div class="step-time">等待中</div>
+                                    </div>
+                                </div>
+                                <div class="progress-line" id="line3"></div>
+                                <div class="progress-step" id="step4">
+                                    <div class="step-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">法律顾问审核</div>
+                                        <div class="step-time">等待中</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 存证内容区域 -->
+                    <div class="evidence-content-section">
+                        <div class="evidence-content-header"
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h4 class="evidence-content-title" style="margin: 0;">存证内容</h4>
+                            <button class="download-evidence-btn" id="downloadEvidenceBtn" title="下载存证记录"
+                                style="padding: 6px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 4px; margin-right: 20px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                下载
+                            </button>
+                        </div>
+                        <div class="evidence-messages" id="evidenceMessages">
+                            <!-- 存证的消息内容会动态加载到这里 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入框 -->
+            <div class="chat-input-bar" id="chatInputBar" style="display: none;">
+                <textarea id="userInput" rows="1" placeholder="给保险合同解释助手发送消息..."></textarea>
+                <button class="add-ui-btn" id="addUIBtn" title="添加附件">
+                    <img src="https://api.iconify.design/tabler:plus.svg?color=%236b7280" alt="add" />
+                </button>
+                <button class="send-btn" id="sendBtn" title="发送消息">
+                    <img src="https://api.iconify.design/tabler:send.svg?color=white" alt="send" />
+                    <span>发 送</span>
+                </button>
+            </div>
+
+            <!-- 聊天框下方挡板 -->
+            <div class="chat-input-baffle" id="chatInputBaffle" style="display: none;"></div>
+        </main>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

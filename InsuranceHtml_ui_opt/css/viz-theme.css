@@ -1,0 +1,273 @@
+/* =================================================================
+   可视化分析风格覆盖层
+   ================================================================= */
+
+body {
+    background: #d3dff0;
+}
+
+.viz-topbar {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: #e8f0ff;
+    background: linear-gradient(100deg, #0c2c60 0%, #1b4e96 56%, #4b2e83 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.viz-topbar-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.viz-topbar-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.viz-topbar-pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.viz-toolbar {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    background: #f7fbff;
+    border-bottom: 1px solid #cfdaea;
+}
+
+.viz-tool-btn {
+    border: 1px solid #d4deea;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 12px;
+    height: 24px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viz-tool-btn:hover {
+    border-color: #7aa3d8;
+    color: #153f7a;
+    box-shadow: 0 2px 8px rgba(21, 63, 122, 0.12);
+}
+
+.container {
+    height: calc(100vh - 80px);
+    background: #cdd8ea;
+}
+
+aside {
+    width: 230px;
+    background: #eef3fa;
+    border-right: 1px solid #c8d4e6;
+    box-shadow: none;
+}
+
+.logo-box {
+    border-bottom: 1px solid #d6e0ee;
+    position: relative;
+    justify-content: center;
+}
+
+.panel-title {
+    color: #274267;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+.menu-btn {
+    background: linear-gradient(180deg, #ffffff 0%, #f1f6fc 100%);
+    color: #2f4a6b;
+    border: 1px solid #c7d7ea;
+    box-shadow: none;
+    position: relative;
+    justify-content: flex-start;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.menu-btn .btn-icon {
+    filter: none;
+    opacity: 0.9;
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-btn .menu-btn-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.menu-btn:hover {
+    background: linear-gradient(180deg, #f8fbff 0%, #e9f1fb 100%);
+    border-color: #96b6da;
+    color: #153f7a;
+    box-shadow: 0 4px 10px rgba(21, 63, 122, 0.16);
+}
+
+.history-content,
+.evidence-section {
+    background: #f8fbff;
+    border: 1px solid #d8e3f2;
+    box-shadow: none;
+}
+
+main {
+    background: linear-gradient(180deg, #d6e1f0 0%, #c9d5e8 100%);
+}
+
+.backend-status-bar {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid #c8d5e8;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.welcome {
+    color: #22364f;
+}
+
+.welcome h1 {
+    color: #1f3552;
+}
+
+.welcome p {
+    color: #445d7d;
+}
+
+.upload-content {
+    max-width: 980px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #c8d6e8;
+    box-shadow: 0 12px 28px rgba(20, 35, 60, 0.12);
+}
+
+.upload-area {
+    border: 2px dashed #9db5d3;
+    background: rgba(248, 251, 255, 0.88);
+}
+
+.upload-area:hover {
+    border-color: #5b83b8;
+    background: rgba(243, 248, 255, 0.95);
+    box-shadow: 0 10px 24px rgba(25, 60, 110, 0.15);
+}
+
+.chat-header {
+    background: rgba(239, 245, 253, 0.92);
+    border-bottom: 1px solid #c8d6e8;
+}
+
+.chat-title {
+    color: #1e3a5f;
+}
+
+.chat-messages {
+    max-width: 1120px;
+}
+
+.welcome-message .message-content,
+.bot-message .message-content {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #d1deee;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.07);
+}
+
+.user-message .message-content {
+    background: rgba(216, 232, 250, 0.9);
+    border: 1px solid #aec6e4;
+}
+
+.chat-input-bar {
+    background: rgba(247, 251, 255, 0.94);
+    border: 2px solid #becfe5;
+    box-shadow: 0 14px 26px rgba(15, 23, 42, 0.18);
+}
+
+.chat-input-bar:focus-within {
+    border-color: #7a9fca;
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.2);
+}
+
+.add-ui-btn:hover {
+    background: #eaf1fb;
+}
+
+.send-btn {
+    background: linear-gradient(135deg, #245e8f 0%, #1f4f46 100%);
+    border-color: #245e8f;
+}
+
+.send-btn:hover {
+    background: linear-gradient(135deg, #1f4f7d 0%, #173e37 100%);
+    border-color: #1f4f7d;
+    box-shadow: 0 6px 12px rgba(31, 79, 125, 0.28);
+}
+
+@media (max-width: 768px) {
+    .viz-topbar {
+        height: 40px;
+        padding: 0 10px;
+    }
+
+    .viz-topbar-title {
+        font-size: 14px;
+    }
+
+    .viz-topbar-pill {
+        display: none;
+    }
+
+    .viz-toolbar {
+        height: 34px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .container {
+        height: calc(100vh - 74px);
+    }
+
+    aside {
+        width: 72px;
+    }
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 0;
+    }
+
+    .menu-btn .menu-btn-text {
+        display: none;
+    }
+
+    .menu-btn .btn-icon {
+        width: 20px;
+        height: 20px;
+    }
+}

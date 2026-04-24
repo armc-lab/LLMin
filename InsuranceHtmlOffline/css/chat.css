@@ -1,0 +1,301 @@
+/* =================================================================
+   对话页面样式
+   ================================================================= */
+
+/* 对话页面主体 */
+.chat-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    overflow-y: auto;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* 对话头部 */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 20px;
+    border-bottom: none;
+    background: var(--white);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.chat-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/* 对话消息区域 */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: visible;
+    background: var(--background-color);
+    max-width: 1050px;
+    margin: 0 auto;
+    margin-left: calc(50% - 525px - 14px);
+    width: 100%;
+    padding-bottom: 180px;
+    /* 适中的底部间距，确保操作按钮可见且不会太空旷 */
+}
+
+/* 欢迎消息 */
+.welcome-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 0px;
+    max-width: 1034px;
+    width: 1034px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(-14px);
+}
+
+.welcome-message .message-content {
+    background: transparent;
+    padding: 0px 0px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.bot-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bot-avatar img {
+    width: 28px;
+    height: 28px;
+    filter: none;
+    /* 保持图标原色 */
+}
+
+.message-content {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-light);
+}
+
+/* 整体段落的行高控制 */
+.message-content p {
+    margin: 0;
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.8px;
+    word-spacing: 2px;
+    font-weight: 400;
+}
+
+/* 控制消息内容中的行间距 */
+.message-content span.line-break {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+/* 强制紧凑间距 */
+.message-content p>span.line-break:not(:last-child) {
+    margin-bottom: 1px;
+}
+
+.message-content p+p {
+    margin-top: 0px;
+}
+
+/* 文本渲染优化 */
+.message-content {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 针对中文文本的额外间距优化 */
+.message-content p:lang(zh) {
+    letter-spacing: 1px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* 用户消息样式 */
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+/* 用户消息样式 */
+.user-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 4px;
+}
+
+.user-message .message-content {
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--text-primary);
+    max-width: 70%;
+}
+
+.user-message .message-content p {
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* 消息操作按钮 */
+.message-actions {
+    display: flex;
+    gap: 8px;
+    opacity: 1;
+    position: relative;
+    z-index: 10;
+    /* 降低层级，确保不会遮挡输入框和挡板 */
+}
+
+.message-action-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.message-action-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.message-action-btn img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.message-action-btn:hover img {
+    opacity: 1;
+}
+
+/* 机器人消息样式 */
+.bot-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 4px;
+    max-width: 1034px;
+    width: 1034px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(-14px);
+}
+
+.bot-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.bot-message .message-content {
+    background: transparent;
+    padding: 4px 0px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.bot-message .message-actions {
+    display: flex;
+    gap: 8px;
+    opacity: 1;
+}
+
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .chat-header {
+        padding: 12px 16px;
+    }
+
+    .chat-messages {
+        padding: 16px;
+    }
+
+    .chat-title {
+        font-size: 16px;
+    }
+
+    .welcome-message,
+    .bot-message {
+        max-width: 90%;
+        width: 90%;
+        transform: translateX(-14px);
+    }
+
+    .user-message .message-content {
+        max-width: 85%;
+    }
+}
+
+/* 打字效果样式 */
+.typing-text {
+    display: inline;
+}
+
+.typing-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: #666;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
