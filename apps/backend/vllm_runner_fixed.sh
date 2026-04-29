@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# vLLM 推理服务启动脚本
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+# ==== Python 环境 ====
+CONDA_ENV_NAME=${CONDA_ENV_NAME:-baichuan-chat}
+if command -v conda >/dev/null 2>&1; then
+  # shellcheck disable=SC1091
+  source "$(conda info --base)/etc/profile.d/conda.sh"
+  conda activate "$CONDA_ENV_NAME"
+fi
+
+# ==== 环境变量配置 ====
+# 用户本地 CUDA 链接修复
+mkdir -p $HOME/libcuda_fix
+ln -sf /usr/lib/x86_64-linux-gnu/libcuda.so.1 $HOME/libcuda_fix/libcuda.so
+
+export CUDA_LIB_DIR=/usr/lib/x86_64-linux-gnu
+export LD_LIBRARY_PATH=$HOME/libcuda_fix:$CUDA_LIB_DIR:${LD_LIBRARY_PATH:-}
+export LIBRARY_PATH=$HOME/libcuda_fix:$CUDA_LIB_DIR:${LIBRARY_PATH:-}
+export LDFLAGS="-L$HOME/libcuda_fix -L$CUDA_LIB_DIR ${LDFLAGS:-}"
+
+# ==== 模型与配置 ====
+MODEL_PATH="${MODEL_PATH:-$PROJECT_ROOT/models/baichuan}"
+CHAT_TEMPLATE="${CHAT_TEMPLATE:-$SCRIPT_DIR/baichuan_template.jinja}"
+PORT="${PORT:-8000}"
+GPU_ID="${GPU_ID:-1}"
+
+
+# ==== 启动信息 ====
+echo "============================================"
+echo " 启动 vLLM API Server"
+echo " 模型路径        : $MODEL_PATH"
+echo " 使用 GPU       : $GPU_ID"
+echo " 监听端口       : $PORT"
+echo " Chat 模板文件  : $CHAT_TEMPLATE (format=string)"
+echo " generation-conf: vllm"
+echo " conda env       : $CONDA_ENV_NAME"
+echo "============================================"
+
+# ==== 启动服务 ====
+CUDA_VISIBLE_DEVICES="$GPU_ID" python -m vllm.entrypoints.openai.api_server \
+  --model "$MODEL_PATH" \
+  --trust-remote-code \
+  --port "$PORT" \
+  --disable-log-stats \
+  --dtype float16 \
+  --max-model-len 4096 \
+  --gpu-memory-utilization 0.8 \
+  --generation-config vllm \
+  --chat-template "$CHAT_TEMPLATE" \
+  --chat-template-content-format string

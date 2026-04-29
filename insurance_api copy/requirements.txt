@@ -1,6 +1,0 @@
-fastapi
-uvicorn[standard]
-httpx
-vllm
-python-multipart
-PyMuPDF
