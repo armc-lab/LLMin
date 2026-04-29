@@ -20,5 +20,60 @@
       "citation_keywords": ["条款", "证据"],
       "should_abstain": true
     }
+  },
+  {
+    "id": "demo-003",
+    "category": "宽限期规定",
+    "question": "我上个月忘记交保费了，我的保单会立刻失效吗？",
+    "expected": {
+      "answer_text": "不会立刻失效。合同通常设有60天的宽限期，在宽限期内即使未交费，保险合同依然有效。",
+      "must_include": ["不会立刻失效", "60天", "宽限期", "依然有效"],
+      "citation_keywords": ["宽限期", "60天", "效力中止"],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-004",
+    "category": "犹豫期退保",
+    "question": "刚买的保险不到一个星期，我现在不想买了，能全额退款吗？",
+    "expected": {
+      "answer_text": "可以。您在签收保单后通常有15天的犹豫期，犹豫期内退保只需扣除不超过10元的工本费，保险公司会无息退还您所交的全部保费。",
+      "must_include": ["可以", "犹豫期", "退还", "全部保费"],
+      "citation_keywords": ["犹豫期", "工本费", "无息退还"],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-005",
+    "category": "免责条款",
+    "question": "如果酒驾发生交通事故，意外险能赔吗？",
+    "expected": {
+      "answer_text": "不能理赔。酒后驾驶、无证驾驶等属于保险合同中明文规定的责任免除情形，保险公司不承担给付保险金的责任。",
+      "must_include": ["不能理赔", "责任免除", "酒后驾驶"],
+      "citation_keywords": ["责任免除", "酒后驾驶", "不承担"],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-006",
+    "category": "等待期规定",
+    "question": "我昨天刚买的重疾险，今天去医院查出原位癌，能获赔吗？",
+    "expected": {
+      "answer_text": "不能获赔。重疾险通常设有90天或180天的等待期，在等待期内确诊合同约定的疾病，保险公司不承担理赔责任，一般会退还已交保费并终止合同。",
+      "must_include": ["不能获赔", "等待期", "退还已交保费"],
+      "citation_keywords": ["等待期", "不在理赔范围", "终止合同"],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-007",
+    "category": "证据不足拒答",
+    "question": "听说你们下个月会推出保费打五折的活动，是真的吗？",
+    "expected": {
+      "answer_text": "现有证据不足，无法确认该活动的真实性，请以官方渠道发布的正式公告为准。",
+      "must_include": ["证据不足", "无法确认", "官方渠道"],
+      "citation_keywords": ["活动真实性", "以官方为准"],
+      "should_abstain": true
+    }
   }
 ]

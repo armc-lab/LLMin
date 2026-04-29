@@ -1,0 +1,2034 @@
+[
+  {
+    "id": "demo-001",
+    "category": "健康告知",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？",
+    "expected": {
+      "answer_text": "若未如实告知且影响承保决定，保险公司可依条款拒赔。",
+      "must_include": [
+        "如实告知",
+        "拒赔",
+        "条款"
+      ],
+      "citation_keywords": [
+        "11.6",
+        "如实告知",
+        "明确说明"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-002",
+    "category": "证据不足拒答",
+    "question": "合同没写的特殊病种是不是一定赔？",
+    "expected": {
+      "answer_text": "现有证据不足，无法确认是否赔付，建议人工核对条款。",
+      "must_include": [
+        "证据不足",
+        "人工核对"
+      ],
+      "citation_keywords": [
+        "条款",
+        "证据"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "demo-003",
+    "category": "宽限期规定",
+    "question": "我上个月忘记交保费了，我的保单会立刻失效吗？",
+    "expected": {
+      "answer_text": "不会立刻失效。合同通常设有60天的宽限期，在宽限期内即使未交费，保险合同依然有效。",
+      "must_include": [
+        "不会立刻失效",
+        "60天",
+        "宽限期",
+        "依然有效"
+      ],
+      "citation_keywords": [
+        "宽限期",
+        "60天",
+        "效力中止"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-004",
+    "category": "犹豫期退保",
+    "question": "刚买的保险不到一个星期，我现在不想买了，能全额退款吗？",
+    "expected": {
+      "answer_text": "可以。您在签收保单后通常有15天的犹豫期，犹豫期内退保只需扣除不超过10元的工本费，保险公司会无息退还您所交的全部保费。",
+      "must_include": [
+        "可以",
+        "犹豫期",
+        "退还",
+        "全部保费"
+      ],
+      "citation_keywords": [
+        "犹豫期",
+        "工本费",
+        "无息退还"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-005",
+    "category": "免责条款",
+    "question": "如果酒驾发生交通事故，意外险能赔吗？",
+    "expected": {
+      "answer_text": "不能理赔。酒后驾驶、无证驾驶等属于保险合同中明文规定的责任免除情形，保险公司不承担给付保险金的责任。",
+      "must_include": [
+        "不能理赔",
+        "责任免除",
+        "酒后驾驶"
+      ],
+      "citation_keywords": [
+        "责任免除",
+        "酒后驾驶",
+        "不承担"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-006",
+    "category": "等待期规定",
+    "question": "我昨天刚买的重疾险，今天去医院查出原位癌，能获赔吗？",
+    "expected": {
+      "answer_text": "不能获赔。重疾险通常设有90天或180天的等待期，在等待期内确诊合同约定的疾病，保险公司不承担理赔责任，一般会退还已交保费并终止合同。",
+      "must_include": [
+        "不能获赔",
+        "等待期",
+        "退还已交保费"
+      ],
+      "citation_keywords": [
+        "等待期",
+        "不在理赔范围",
+        "终止合同"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-007",
+    "category": "证据不足拒答",
+    "question": "听说你们下个月会推出保费打五折的活动，是真的吗？",
+    "expected": {
+      "answer_text": "现有证据不足，无法确认该活动的真实性，请以官方渠道发布的正式公告为准。",
+      "must_include": [
+        "证据不足",
+        "无法确认",
+        "官方渠道"
+      ],
+      "citation_keywords": [
+        "活动真实性",
+        "以官方为准"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-001",
+    "category": "复效申请",
+    "question": "保单停效以后，想继续保障，通常需要满足什么条件才能复效？",
+    "expected": {
+      "answer_text": "保单效力中止后，一般需补交欠缴保费及利息，并经保险公司审核同意后才能恢复效力。",
+      "must_include": [
+        "补交",
+        "审核同意",
+        "恢复效力"
+      ],
+      "citation_keywords": [
+        "复效",
+        "补交保费",
+        "审核同意"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-002",
+    "category": "复效申请",
+    "question": "如果保险已经中止，我现在补钱后能不能直接恢复？",
+    "expected": {
+      "answer_text": "保单效力中止后，一般需补交欠缴保费及利息，并经保险公司审核同意后才能恢复效力。",
+      "must_include": [
+        "补交",
+        "审核同意",
+        "恢复效力"
+      ],
+      "citation_keywords": [
+        "复效",
+        "补交保费",
+        "审核同意"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-003",
+    "category": "复效申请",
+    "question": "合同失效后申请复效，保险公司一般会看哪些条件？",
+    "expected": {
+      "answer_text": "保单效力中止后，一般需补交欠缴保费及利息，并经保险公司审核同意后才能恢复效力。",
+      "must_include": [
+        "补交",
+        "审核同意",
+        "恢复效力"
+      ],
+      "citation_keywords": [
+        "复效",
+        "补交保费",
+        "审核同意"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-004",
+    "category": "复效申请",
+    "question": "宽限期过后保单停了，想重新生效通常要怎么做？",
+    "expected": {
+      "answer_text": "保单效力中止后，一般需补交欠缴保费及利息，并经保险公司审核同意后才能恢复效力。",
+      "must_include": [
+        "补交",
+        "审核同意",
+        "恢复效力"
+      ],
+      "citation_keywords": [
+        "复效",
+        "补交保费",
+        "审核同意"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-005",
+    "category": "复效申请",
+    "question": "保费断缴导致效力中止后，恢复保障通常需要哪些步骤？",
+    "expected": {
+      "answer_text": "保单效力中止后，一般需补交欠缴保费及利息，并经保险公司审核同意后才能恢复效力。",
+      "must_include": [
+        "补交",
+        "审核同意",
+        "恢复效力"
+      ],
+      "citation_keywords": [
+        "复效",
+        "补交保费",
+        "审核同意"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-006",
+    "category": "受益人变更",
+    "question": "买完保险以后，我还能把受益人改成配偶吗？",
+    "expected": {
+      "answer_text": "可以变更。通常需由投保人提出书面申请，经保险公司批注或确认后生效。",
+      "must_include": [
+        "书面申请",
+        "批注",
+        "生效"
+      ],
+      "citation_keywords": [
+        "受益人变更",
+        "书面申请",
+        "批注"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-007",
+    "category": "受益人变更",
+    "question": "保单上的受益人后续想调整，需要走什么手续？",
+    "expected": {
+      "answer_text": "可以变更。通常需由投保人提出书面申请，经保险公司批注或确认后生效。",
+      "must_include": [
+        "书面申请",
+        "批注",
+        "生效"
+      ],
+      "citation_keywords": [
+        "受益人变更",
+        "书面申请",
+        "批注"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-008",
+    "category": "受益人变更",
+    "question": "如果想把孩子改成受益人，合同一般允许吗？",
+    "expected": {
+      "answer_text": "可以变更。通常需由投保人提出书面申请，经保险公司批注或确认后生效。",
+      "must_include": [
+        "书面申请",
+        "批注",
+        "生效"
+      ],
+      "citation_keywords": [
+        "受益人变更",
+        "书面申请",
+        "批注"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-009",
+    "category": "受益人变更",
+    "question": "受益人不是固定的吗，投保后还能申请变更吗？",
+    "expected": {
+      "answer_text": "可以变更。通常需由投保人提出书面申请，经保险公司批注或确认后生效。",
+      "must_include": [
+        "书面申请",
+        "批注",
+        "生效"
+      ],
+      "citation_keywords": [
+        "受益人变更",
+        "书面申请",
+        "批注"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-010",
+    "category": "受益人变更",
+    "question": "更换受益人时，是口头通知就行还是需要正式申请？",
+    "expected": {
+      "answer_text": "可以变更。通常需由投保人提出书面申请，经保险公司批注或确认后生效。",
+      "must_include": [
+        "书面申请",
+        "批注",
+        "生效"
+      ],
+      "citation_keywords": [
+        "受益人变更",
+        "书面申请",
+        "批注"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-011",
+    "category": "年龄误告",
+    "question": "投保时把年龄写错了，后面发现了会怎么处理？",
+    "expected": {
+      "answer_text": "年龄误告时，保险公司通常会按实际年龄调整保费；多收的应退还，少收的可补收，严重影响承保的可按条款处理。",
+      "must_include": [
+        "实际年龄",
+        "退还",
+        "补收"
+      ],
+      "citation_keywords": [
+        "年龄误告",
+        "调整保费",
+        "补收保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-012",
+    "category": "年龄误告",
+    "question": "如果实际年龄比投保时填的小，保险公司会不会退回多交的保费？",
+    "expected": {
+      "answer_text": "年龄误告时，保险公司通常会按实际年龄调整保费；多收的应退还，少收的可补收，严重影响承保的可按条款处理。",
+      "must_include": [
+        "实际年龄",
+        "退还",
+        "补收"
+      ],
+      "citation_keywords": [
+        "年龄误告",
+        "调整保费",
+        "补收保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-013",
+    "category": "年龄误告",
+    "question": "年龄申报有误时，合同一般是直接作废还是先调整保费？",
+    "expected": {
+      "answer_text": "年龄误告时，保险公司通常会按实际年龄调整保费；多收的应退还，少收的可补收，严重影响承保的可按条款处理。",
+      "must_include": [
+        "实际年龄",
+        "退还",
+        "补收"
+      ],
+      "citation_keywords": [
+        "年龄误告",
+        "调整保费",
+        "补收保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-014",
+    "category": "年龄误告",
+    "question": "把出生年份填错了，理赔时保险公司通常怎么按条款处理？",
+    "expected": {
+      "answer_text": "年龄误告时，保险公司通常会按实际年龄调整保费；多收的应退还，少收的可补收，严重影响承保的可按条款处理。",
+      "must_include": [
+        "实际年龄",
+        "退还",
+        "补收"
+      ],
+      "citation_keywords": [
+        "年龄误告",
+        "调整保费",
+        "补收保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-015",
+    "category": "年龄误告",
+    "question": "年龄误告会不会导致后续需要补交保费？",
+    "expected": {
+      "answer_text": "年龄误告时，保险公司通常会按实际年龄调整保费；多收的应退还，少收的可补收，严重影响承保的可按条款处理。",
+      "must_include": [
+        "实际年龄",
+        "退还",
+        "补收"
+      ],
+      "citation_keywords": [
+        "年龄误告",
+        "调整保费",
+        "补收保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-016",
+    "category": "自杀责任",
+    "question": "寿险生效不久后被保险人自杀，保险公司一般赔不赔？",
+    "expected": {
+      "answer_text": "被保险人在合同成立或复效后两年内自杀，通常不承担给付责任，但会按条款退还相应价值；无民事行为能力人除外。",
+      "must_include": [
+        "两年内",
+        "不承担给付责任",
+        "除外"
+      ],
+      "citation_keywords": [
+        "自杀",
+        "两年",
+        "不承担给付责任"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-017",
+    "category": "自杀责任",
+    "question": "如果合同刚恢复效力没多久就发生自杀，责任通常怎么认定？",
+    "expected": {
+      "answer_text": "被保险人在合同成立或复效后两年内自杀，通常不承担给付责任，但会按条款退还相应价值；无民事行为能力人除外。",
+      "must_include": [
+        "两年内",
+        "不承担给付责任",
+        "除外"
+      ],
+      "citation_keywords": [
+        "自杀",
+        "两年",
+        "不承担给付责任"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-018",
+    "category": "自杀责任",
+    "question": "保单成立两年内发生自杀，理赔规则一般是什么？",
+    "expected": {
+      "answer_text": "被保险人在合同成立或复效后两年内自杀，通常不承担给付责任，但会按条款退还相应价值；无民事行为能力人除外。",
+      "must_include": [
+        "两年内",
+        "不承担给付责任",
+        "除外"
+      ],
+      "citation_keywords": [
+        "自杀",
+        "两年",
+        "不承担给付责任"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-019",
+    "category": "自杀责任",
+    "question": "自杀这种情况是不是一定不赔，条款通常怎么写？",
+    "expected": {
+      "answer_text": "被保险人在合同成立或复效后两年内自杀，通常不承担给付责任，但会按条款退还相应价值；无民事行为能力人除外。",
+      "must_include": [
+        "两年内",
+        "不承担给付责任",
+        "除外"
+      ],
+      "citation_keywords": [
+        "自杀",
+        "两年",
+        "不承担给付责任"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-020",
+    "category": "自杀责任",
+    "question": "关于自杀责任，合同为什么经常会提到两年这个时间点？",
+    "expected": {
+      "answer_text": "被保险人在合同成立或复效后两年内自杀，通常不承担给付责任，但会按条款退还相应价值；无民事行为能力人除外。",
+      "must_include": [
+        "两年内",
+        "不承担给付责任",
+        "除外"
+      ],
+      "citation_keywords": [
+        "自杀",
+        "两年",
+        "不承担给付责任"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-021",
+    "category": "指定医院就医",
+    "question": "看病如果没去合同指定的医院，医疗险还会正常赔吗？",
+    "expected": {
+      "answer_text": "应优先在合同约定的医院范围内就医，非约定医院发生的费用通常不能按标准理赔，具体以条款约定为准。",
+      "must_include": [
+        "约定医院",
+        "理赔",
+        "条款约定"
+      ],
+      "citation_keywords": [
+        "医院范围",
+        "约定医院",
+        "理赔范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-022",
+    "category": "指定医院就医",
+    "question": "保险合同提到医院范围，这对理赔有什么影响？",
+    "expected": {
+      "answer_text": "应优先在合同约定的医院范围内就医，非约定医院发生的费用通常不能按标准理赔，具体以条款约定为准。",
+      "must_include": [
+        "约定医院",
+        "理赔",
+        "条款约定"
+      ],
+      "citation_keywords": [
+        "医院范围",
+        "约定医院",
+        "理赔范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-023",
+    "category": "指定医院就医",
+    "question": "我在非指定医院住院，费用是不是就不能按正常标准报销？",
+    "expected": {
+      "answer_text": "应优先在合同约定的医院范围内就医，非约定医院发生的费用通常不能按标准理赔，具体以条款约定为准。",
+      "must_include": [
+        "约定医院",
+        "理赔",
+        "条款约定"
+      ],
+      "citation_keywords": [
+        "医院范围",
+        "约定医院",
+        "理赔范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-024",
+    "category": "指定医院就医",
+    "question": "医疗险为什么要求在约定医院就医？",
+    "expected": {
+      "answer_text": "应优先在合同约定的医院范围内就医，非约定医院发生的费用通常不能按标准理赔，具体以条款约定为准。",
+      "must_include": [
+        "约定医院",
+        "理赔",
+        "条款约定"
+      ],
+      "citation_keywords": [
+        "医院范围",
+        "约定医院",
+        "理赔范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-025",
+    "category": "指定医院就医",
+    "question": "合同写了医院范围后，跨院治疗会不会影响赔付？",
+    "expected": {
+      "answer_text": "应优先在合同约定的医院范围内就医，非约定医院发生的费用通常不能按标准理赔，具体以条款约定为准。",
+      "must_include": [
+        "约定医院",
+        "理赔",
+        "条款约定"
+      ],
+      "citation_keywords": [
+        "医院范围",
+        "约定医院",
+        "理赔范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-026",
+    "category": "报案通知义务",
+    "question": "出险以后是不是要尽快报案，拖太久会有什么后果？",
+    "expected": {
+      "answer_text": "发生保险事故后应及时通知保险公司；因迟延通知导致事故性质或损失难以确定的部分，保险公司可不承担责任。",
+      "must_include": [
+        "及时通知",
+        "难以确定",
+        "不承担责任"
+      ],
+      "citation_keywords": [
+        "事故通知",
+        "及时通知",
+        "损失确定"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-027",
+    "category": "报案通知义务",
+    "question": "如果发生保险事故后很久才通知保险公司，会不会影响理赔？",
+    "expected": {
+      "answer_text": "发生保险事故后应及时通知保险公司；因迟延通知导致事故性质或损失难以确定的部分，保险公司可不承担责任。",
+      "must_include": [
+        "及时通知",
+        "难以确定",
+        "不承担责任"
+      ],
+      "citation_keywords": [
+        "事故通知",
+        "及时通知",
+        "损失确定"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-028",
+    "category": "报案通知义务",
+    "question": "报案通知义务具体会影响哪一部分赔付责任？",
+    "expected": {
+      "answer_text": "发生保险事故后应及时通知保险公司；因迟延通知导致事故性质或损失难以确定的部分，保险公司可不承担责任。",
+      "must_include": [
+        "及时通知",
+        "难以确定",
+        "不承担责任"
+      ],
+      "citation_keywords": [
+        "事故通知",
+        "及时通知",
+        "损失确定"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-029",
+    "category": "报案通知义务",
+    "question": "为什么条款要求出险后要及时联系保险公司？",
+    "expected": {
+      "answer_text": "发生保险事故后应及时通知保险公司；因迟延通知导致事故性质或损失难以确定的部分，保险公司可不承担责任。",
+      "must_include": [
+        "及时通知",
+        "难以确定",
+        "不承担责任"
+      ],
+      "citation_keywords": [
+        "事故通知",
+        "及时通知",
+        "损失确定"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-030",
+    "category": "报案通知义务",
+    "question": "晚报案会不会导致部分损失不被认可？",
+    "expected": {
+      "answer_text": "发生保险事故后应及时通知保险公司；因迟延通知导致事故性质或损失难以确定的部分，保险公司可不承担责任。",
+      "must_include": [
+        "及时通知",
+        "难以确定",
+        "不承担责任"
+      ],
+      "citation_keywords": [
+        "事故通知",
+        "及时通知",
+        "损失确定"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-031",
+    "category": "理赔申请材料",
+    "question": "正式申请理赔时，一般最核心的材料有哪些？",
+    "expected": {
+      "answer_text": "申请理赔通常需提交理赔申请书、身份证明、病历资料、费用票据和诊断证明等核心材料。",
+      "must_include": [
+        "理赔申请书",
+        "身份证明",
+        "票据",
+        "诊断证明"
+      ],
+      "citation_keywords": [
+        "理赔材料",
+        "病历资料",
+        "诊断证明"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-032",
+    "category": "理赔申请材料",
+    "question": "我准备走医疗理赔，通常需要交哪些证明文件？",
+    "expected": {
+      "answer_text": "申请理赔通常需提交理赔申请书、身份证明、病历资料、费用票据和诊断证明等核心材料。",
+      "must_include": [
+        "理赔申请书",
+        "身份证明",
+        "票据",
+        "诊断证明"
+      ],
+      "citation_keywords": [
+        "理赔材料",
+        "病历资料",
+        "诊断证明"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-033",
+    "category": "理赔申请材料",
+    "question": "向保险公司报销住院费时，病历和发票是不是都要提供？",
+    "expected": {
+      "answer_text": "申请理赔通常需提交理赔申请书、身份证明、病历资料、费用票据和诊断证明等核心材料。",
+      "must_include": [
+        "理赔申请书",
+        "身份证明",
+        "票据",
+        "诊断证明"
+      ],
+      "citation_keywords": [
+        "理赔材料",
+        "病历资料",
+        "诊断证明"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-034",
+    "category": "理赔申请材料",
+    "question": "理赔资料里通常会要求哪些身份证明和医疗材料？",
+    "expected": {
+      "answer_text": "申请理赔通常需提交理赔申请书、身份证明、病历资料、费用票据和诊断证明等核心材料。",
+      "must_include": [
+        "理赔申请书",
+        "身份证明",
+        "票据",
+        "诊断证明"
+      ],
+      "citation_keywords": [
+        "理赔材料",
+        "病历资料",
+        "诊断证明"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-035",
+    "category": "理赔申请材料",
+    "question": "如果要提交理赔申请，哪些单据最不能缺？",
+    "expected": {
+      "answer_text": "申请理赔通常需提交理赔申请书、身份证明、病历资料、费用票据和诊断证明等核心材料。",
+      "must_include": [
+        "理赔申请书",
+        "身份证明",
+        "票据",
+        "诊断证明"
+      ],
+      "citation_keywords": [
+        "理赔材料",
+        "病历资料",
+        "诊断证明"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-036",
+    "category": "保费豁免",
+    "question": "得了合同约定的重疾后，后面的保费还要继续交吗？",
+    "expected": {
+      "answer_text": "若合同约定了保费豁免责任，达到约定的疾病或事故条件后，可豁免后续保费且合同继续有效。",
+      "must_include": [
+        "保费豁免",
+        "后续保费",
+        "继续有效"
+      ],
+      "citation_keywords": [
+        "豁免保险费",
+        "后续保费",
+        "合同继续有效"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-037",
+    "category": "保费豁免",
+    "question": "保险里的保费豁免到底是什么意思？",
+    "expected": {
+      "answer_text": "若合同约定了保费豁免责任，达到约定的疾病或事故条件后，可豁免后续保费且合同继续有效。",
+      "must_include": [
+        "保费豁免",
+        "后续保费",
+        "继续有效"
+      ],
+      "citation_keywords": [
+        "豁免保险费",
+        "后续保费",
+        "合同继续有效"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-038",
+    "category": "保费豁免",
+    "question": "触发豁免责任后，是不是不用再交剩余保费了？",
+    "expected": {
+      "answer_text": "若合同约定了保费豁免责任，达到约定的疾病或事故条件后，可豁免后续保费且合同继续有效。",
+      "must_include": [
+        "保费豁免",
+        "后续保费",
+        "继续有效"
+      ],
+      "citation_keywords": [
+        "豁免保险费",
+        "后续保费",
+        "合同继续有效"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-039",
+    "category": "保费豁免",
+    "question": "如果符合豁免条件，保障会不会继续有效？",
+    "expected": {
+      "answer_text": "若合同约定了保费豁免责任，达到约定的疾病或事故条件后，可豁免后续保费且合同继续有效。",
+      "must_include": [
+        "保费豁免",
+        "后续保费",
+        "继续有效"
+      ],
+      "citation_keywords": [
+        "豁免保险费",
+        "后续保费",
+        "合同继续有效"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-040",
+    "category": "保费豁免",
+    "question": "保费豁免生效后，合同是终止还是继续保障？",
+    "expected": {
+      "answer_text": "若合同约定了保费豁免责任，达到约定的疾病或事故条件后，可豁免后续保费且合同继续有效。",
+      "must_include": [
+        "保费豁免",
+        "后续保费",
+        "继续有效"
+      ],
+      "citation_keywords": [
+        "豁免保险费",
+        "后续保费",
+        "合同继续有效"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-041",
+    "category": "保证续保",
+    "question": "医疗险写着保证续保，是不是以后身体变差也能接着买？",
+    "expected": {
+      "answer_text": "保证续保期间内，保险公司一般不会因被保险人健康变化或既往理赔记录单方拒绝续保，但具体期限和范围以条款为准。",
+      "must_include": [
+        "保证续保",
+        "健康变化",
+        "条款为准"
+      ],
+      "citation_keywords": [
+        "保证续保",
+        "续保期间",
+        "健康变化"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-042",
+    "category": "保证续保",
+    "question": "保证续保和普通续保最大的区别是什么？",
+    "expected": {
+      "answer_text": "保证续保期间内，保险公司一般不会因被保险人健康变化或既往理赔记录单方拒绝续保，但具体期限和范围以条款为准。",
+      "must_include": [
+        "保证续保",
+        "健康变化",
+        "条款为准"
+      ],
+      "citation_keywords": [
+        "保证续保",
+        "续保期间",
+        "健康变化"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-043",
+    "category": "保证续保",
+    "question": "如果已经理赔过很多次，保证续保期内还能继续保吗？",
+    "expected": {
+      "answer_text": "保证续保期间内，保险公司一般不会因被保险人健康变化或既往理赔记录单方拒绝续保，但具体期限和范围以条款为准。",
+      "must_include": [
+        "保证续保",
+        "健康变化",
+        "条款为准"
+      ],
+      "citation_keywords": [
+        "保证续保",
+        "续保期间",
+        "健康变化"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-044",
+    "category": "保证续保",
+    "question": "合同承诺保证续保后，保险公司还能因为生病拒绝续保吗？",
+    "expected": {
+      "answer_text": "保证续保期间内，保险公司一般不会因被保险人健康变化或既往理赔记录单方拒绝续保，但具体期限和范围以条款为准。",
+      "must_include": [
+        "保证续保",
+        "健康变化",
+        "条款为准"
+      ],
+      "citation_keywords": [
+        "保证续保",
+        "续保期间",
+        "健康变化"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-045",
+    "category": "保证续保",
+    "question": "保证续保是不是代表续保时不重新看健康情况？",
+    "expected": {
+      "answer_text": "保证续保期间内，保险公司一般不会因被保险人健康变化或既往理赔记录单方拒绝续保，但具体期限和范围以条款为准。",
+      "must_include": [
+        "保证续保",
+        "健康变化",
+        "条款为准"
+      ],
+      "citation_keywords": [
+        "保证续保",
+        "续保期间",
+        "健康变化"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-046",
+    "category": "现金价值退保",
+    "question": "过了犹豫期再退保，是不是只能拿回现金价值？",
+    "expected": {
+      "answer_text": "犹豫期后退保，保险公司通常按合同约定退还现金价值，不是全额退回已交保费。",
+      "must_include": [
+        "现金价值",
+        "退保",
+        "不是全额"
+      ],
+      "citation_keywords": [
+        "现金价值",
+        "退保",
+        "已交保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-047",
+    "category": "现金价值退保",
+    "question": "我已经交了一年保费，现在退保会全额退款吗？",
+    "expected": {
+      "answer_text": "犹豫期后退保，保险公司通常按合同约定退还现金价值，不是全额退回已交保费。",
+      "must_include": [
+        "现金价值",
+        "退保",
+        "不是全额"
+      ],
+      "citation_keywords": [
+        "现金价值",
+        "退保",
+        "已交保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-048",
+    "category": "现金价值退保",
+    "question": "长期险中途退掉，保险公司通常按什么标准返钱？",
+    "expected": {
+      "answer_text": "犹豫期后退保，保险公司通常按合同约定退还现金价值，不是全额退回已交保费。",
+      "must_include": [
+        "现金价值",
+        "退保",
+        "不是全额"
+      ],
+      "citation_keywords": [
+        "现金价值",
+        "退保",
+        "已交保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-049",
+    "category": "现金价值退保",
+    "question": "为什么退保时拿回来的金额往往不是已交保费总额？",
+    "expected": {
+      "answer_text": "犹豫期后退保，保险公司通常按合同约定退还现金价值，不是全额退回已交保费。",
+      "must_include": [
+        "现金价值",
+        "退保",
+        "不是全额"
+      ],
+      "citation_keywords": [
+        "现金价值",
+        "退保",
+        "已交保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-050",
+    "category": "现金价值退保",
+    "question": "犹豫期之后解除合同，退的钱一般叫什么？",
+    "expected": {
+      "answer_text": "犹豫期后退保，保险公司通常按合同约定退还现金价值，不是全额退回已交保费。",
+      "must_include": [
+        "现金价值",
+        "退保",
+        "不是全额"
+      ],
+      "citation_keywords": [
+        "现金价值",
+        "退保",
+        "已交保费"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-051",
+    "category": "效力中止",
+    "question": "保费一直没补上，超过宽限期后保单一般会变成什么状态？",
+    "expected": {
+      "answer_text": "超过宽限期仍未交费，合同通常进入效力中止状态；在复效前发生保险事故，一般不承担给付责任。",
+      "must_include": [
+        "宽限期",
+        "效力中止",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "效力中止",
+        "宽限期",
+        "复效前"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-052",
+    "category": "效力中止",
+    "question": "合同进入效力中止后，如果这时出险通常赔不赔？",
+    "expected": {
+      "answer_text": "超过宽限期仍未交费，合同通常进入效力中止状态；在复效前发生保险事故，一般不承担给付责任。",
+      "must_include": [
+        "宽限期",
+        "效力中止",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "效力中止",
+        "宽限期",
+        "复效前"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-053",
+    "category": "效力中止",
+    "question": "宽限期结束还没交钱，保障是不是就暂停了？",
+    "expected": {
+      "answer_text": "超过宽限期仍未交费，合同通常进入效力中止状态；在复效前发生保险事故，一般不承担给付责任。",
+      "must_include": [
+        "宽限期",
+        "效力中止",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "效力中止",
+        "宽限期",
+        "复效前"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-054",
+    "category": "效力中止",
+    "question": "效力中止和直接解除合同一样吗，对理赔有什么影响？",
+    "expected": {
+      "answer_text": "超过宽限期仍未交费，合同通常进入效力中止状态；在复效前发生保险事故，一般不承担给付责任。",
+      "must_include": [
+        "宽限期",
+        "效力中止",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "效力中止",
+        "宽限期",
+        "复效前"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-055",
+    "category": "效力中止",
+    "question": "保单停效后但还没复效前发生事故，责任通常怎么认定？",
+    "expected": {
+      "answer_text": "超过宽限期仍未交费，合同通常进入效力中止状态；在复效前发生保险事故，一般不承担给付责任。",
+      "must_include": [
+        "宽限期",
+        "效力中止",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "效力中止",
+        "宽限期",
+        "复效前"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-056",
+    "category": "未成年人身故保额",
+    "question": "给未成年人买了高额身故保障，出险时一定能按保额全赔吗？",
+    "expected": {
+      "answer_text": "涉及未成年人身故责任时，给付金额通常受监管限额和合同约定约束，不能简单按主险保额全额理解。",
+      "must_include": [
+        "未成年人",
+        "监管限额",
+        "合同约定"
+      ],
+      "citation_keywords": [
+        "未成年人身故",
+        "监管规定",
+        "给付限额"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-057",
+    "category": "未成年人身故保额",
+    "question": "少儿身故责任为什么经常提到监管限额？",
+    "expected": {
+      "answer_text": "涉及未成年人身故责任时，给付金额通常受监管限额和合同约定约束，不能简单按主险保额全额理解。",
+      "must_include": [
+        "未成年人",
+        "监管限额",
+        "合同约定"
+      ],
+      "citation_keywords": [
+        "未成年人身故",
+        "监管规定",
+        "给付限额"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-058",
+    "category": "未成年人身故保额",
+    "question": "未成年人的身故保险金是不是会被限制？",
+    "expected": {
+      "answer_text": "涉及未成年人身故责任时，给付金额通常受监管限额和合同约定约束，不能简单按主险保额全额理解。",
+      "must_include": [
+        "未成年人",
+        "监管限额",
+        "合同约定"
+      ],
+      "citation_keywords": [
+        "未成年人身故",
+        "监管规定",
+        "给付限额"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-059",
+    "category": "未成年人身故保额",
+    "question": "儿童保单中的身故给付为什么不能只看保额大小？",
+    "expected": {
+      "answer_text": "涉及未成年人身故责任时，给付金额通常受监管限额和合同约定约束，不能简单按主险保额全额理解。",
+      "must_include": [
+        "未成年人",
+        "监管限额",
+        "合同约定"
+      ],
+      "citation_keywords": [
+        "未成年人身故",
+        "监管规定",
+        "给付限额"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-060",
+    "category": "未成年人身故保额",
+    "question": "如果被保险人是未成年人，身故赔付通常要受哪些限制？",
+    "expected": {
+      "answer_text": "涉及未成年人身故责任时，给付金额通常受监管限额和合同约定约束，不能简单按主险保额全额理解。",
+      "must_include": [
+        "未成年人",
+        "监管限额",
+        "合同约定"
+      ],
+      "citation_keywords": [
+        "未成年人身故",
+        "监管规定",
+        "给付限额"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-061",
+    "category": "职业变更通知",
+    "question": "投保后换成更危险的工作，需要主动告诉保险公司吗？",
+    "expected": {
+      "answer_text": "若被保险人职业风险明显增加，通常应及时通知保险公司；未通知可能影响后续承保或理赔责任判断。",
+      "must_include": [
+        "职业风险",
+        "及时通知",
+        "理赔责任判断"
+      ],
+      "citation_keywords": [
+        "职业变更",
+        "风险增加",
+        "及时通知"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-062",
+    "category": "职业变更通知",
+    "question": "职业类别变化为什么会影响保险责任？",
+    "expected": {
+      "answer_text": "若被保险人职业风险明显增加，通常应及时通知保险公司；未通知可能影响后续承保或理赔责任判断。",
+      "must_include": [
+        "职业风险",
+        "及时通知",
+        "理赔责任判断"
+      ],
+      "citation_keywords": [
+        "职业变更",
+        "风险增加",
+        "及时通知"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-063",
+    "category": "职业变更通知",
+    "question": "如果从办公室岗位转成高危工种，没通知会怎样？",
+    "expected": {
+      "answer_text": "若被保险人职业风险明显增加，通常应及时通知保险公司；未通知可能影响后续承保或理赔责任判断。",
+      "must_include": [
+        "职业风险",
+        "及时通知",
+        "理赔责任判断"
+      ],
+      "citation_keywords": [
+        "职业变更",
+        "风险增加",
+        "及时通知"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-064",
+    "category": "职业变更通知",
+    "question": "条款要求职业变更及时通知，主要是为了什么？",
+    "expected": {
+      "answer_text": "若被保险人职业风险明显增加，通常应及时通知保险公司；未通知可能影响后续承保或理赔责任判断。",
+      "must_include": [
+        "职业风险",
+        "及时通知",
+        "理赔责任判断"
+      ],
+      "citation_keywords": [
+        "职业变更",
+        "风险增加",
+        "及时通知"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-065",
+    "category": "职业变更通知",
+    "question": "职业风险上升后不报备，会不会影响以后理赔？",
+    "expected": {
+      "answer_text": "若被保险人职业风险明显增加，通常应及时通知保险公司；未通知可能影响后续承保或理赔责任判断。",
+      "must_include": [
+        "职业风险",
+        "及时通知",
+        "理赔责任判断"
+      ],
+      "citation_keywords": [
+        "职业变更",
+        "风险增加",
+        "及时通知"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-066",
+    "category": "社保先行结算",
+    "question": "医疗费如果不先走社保，商业保险报销比例会受影响吗？",
+    "expected": {
+      "answer_text": "医疗险一般鼓励先经社保结算，再按合同约定比例报销；未经社保结算时，赔付比例通常会更低。",
+      "must_include": [
+        "社保结算",
+        "报销比例",
+        "更低"
+      ],
+      "citation_keywords": [
+        "社保",
+        "报销比例",
+        "医疗费用"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-067",
+    "category": "社保先行结算",
+    "question": "为什么很多医疗险都要求先做社保结算？",
+    "expected": {
+      "answer_text": "医疗险一般鼓励先经社保结算，再按合同约定比例报销；未经社保结算时，赔付比例通常会更低。",
+      "must_include": [
+        "社保结算",
+        "报销比例",
+        "更低"
+      ],
+      "citation_keywords": [
+        "社保",
+        "报销比例",
+        "医疗费用"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-068",
+    "category": "社保先行结算",
+    "question": "先经社保报销和不经社保报销，商业险赔付通常有什么区别？",
+    "expected": {
+      "answer_text": "医疗险一般鼓励先经社保结算，再按合同约定比例报销；未经社保结算时，赔付比例通常会更低。",
+      "must_include": [
+        "社保结算",
+        "报销比例",
+        "更低"
+      ],
+      "citation_keywords": [
+        "社保",
+        "报销比例",
+        "医疗费用"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-069",
+    "category": "社保先行结算",
+    "question": "医疗险理赔时，社保是不是会影响最终赔付比例？",
+    "expected": {
+      "answer_text": "医疗险一般鼓励先经社保结算，再按合同约定比例报销；未经社保结算时，赔付比例通常会更低。",
+      "must_include": [
+        "社保结算",
+        "报销比例",
+        "更低"
+      ],
+      "citation_keywords": [
+        "社保",
+        "报销比例",
+        "医疗费用"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-070",
+    "category": "社保先行结算",
+    "question": "没用社保直接申请商业医疗险，通常会不会少赔一些？",
+    "expected": {
+      "answer_text": "医疗险一般鼓励先经社保结算，再按合同约定比例报销；未经社保结算时，赔付比例通常会更低。",
+      "must_include": [
+        "社保结算",
+        "报销比例",
+        "更低"
+      ],
+      "citation_keywords": [
+        "社保",
+        "报销比例",
+        "医疗费用"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-071",
+    "category": "免责条款",
+    "question": "如果是无证驾驶出的事故，意外险一般会赔吗？",
+    "expected": {
+      "answer_text": "酒驾、无证驾驶、吸毒、犯罪等情形通常属于责任免除，保险公司不承担给付责任。",
+      "must_include": [
+        "责任免除",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "责任免除",
+        "无证驾驶",
+        "犯罪"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-072",
+    "category": "免责条款",
+    "question": "吸毒后发生保险事故，合同通常把这种情况算免责吗？",
+    "expected": {
+      "answer_text": "酒驾、无证驾驶、吸毒、犯罪等情形通常属于责任免除，保险公司不承担给付责任。",
+      "must_include": [
+        "责任免除",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "责任免除",
+        "无证驾驶",
+        "犯罪"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-073",
+    "category": "免责条款",
+    "question": "因犯罪行为导致出险，保险公司一般承担责任吗？",
+    "expected": {
+      "answer_text": "酒驾、无证驾驶、吸毒、犯罪等情形通常属于责任免除，保险公司不承担给付责任。",
+      "must_include": [
+        "责任免除",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "责任免除",
+        "无证驾驶",
+        "犯罪"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-074",
+    "category": "免责条款",
+    "question": "责任免除条款里，为什么常见无证驾驶和吸毒这些情形？",
+    "expected": {
+      "answer_text": "酒驾、无证驾驶、吸毒、犯罪等情形通常属于责任免除，保险公司不承担给付责任。",
+      "must_include": [
+        "责任免除",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "责任免除",
+        "无证驾驶",
+        "犯罪"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-075",
+    "category": "免责条款",
+    "question": "如果事故发生时存在违法行为，保险金通常还能给付吗？",
+    "expected": {
+      "answer_text": "酒驾、无证驾驶、吸毒、犯罪等情形通常属于责任免除，保险公司不承担给付责任。",
+      "must_include": [
+        "责任免除",
+        "不承担给付责任"
+      ],
+      "citation_keywords": [
+        "责任免除",
+        "无证驾驶",
+        "犯罪"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-076",
+    "category": "既往症限制",
+    "question": "投保前已经得过的病，后面复发时通常赔不赔？",
+    "expected": {
+      "answer_text": "投保前已存在且被合同列为既往症、除外责任或免责事项的疾病，通常不在赔付范围内。",
+      "must_include": [
+        "既往症",
+        "除外责任",
+        "不在赔付范围内"
+      ],
+      "citation_keywords": [
+        "既往症",
+        "除外责任",
+        "赔付范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-077",
+    "category": "既往症限制",
+    "question": "如果合同把某种疾病列成既往症，出险后还能申请理赔吗？",
+    "expected": {
+      "answer_text": "投保前已存在且被合同列为既往症、除外责任或免责事项的疾病，通常不在赔付范围内。",
+      "must_include": [
+        "既往症",
+        "除外责任",
+        "不在赔付范围内"
+      ],
+      "citation_keywords": [
+        "既往症",
+        "除外责任",
+        "赔付范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-078",
+    "category": "既往症限制",
+    "question": "既往症和除外责任在理赔上一般是什么关系？",
+    "expected": {
+      "answer_text": "投保前已存在且被合同列为既往症、除外责任或免责事项的疾病，通常不在赔付范围内。",
+      "must_include": [
+        "既往症",
+        "除外责任",
+        "不在赔付范围内"
+      ],
+      "citation_keywords": [
+        "既往症",
+        "除外责任",
+        "赔付范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-079",
+    "category": "既往症限制",
+    "question": "买保险前就存在的疾病，为什么常常不在赔付范围内？",
+    "expected": {
+      "answer_text": "投保前已存在且被合同列为既往症、除外责任或免责事项的疾病，通常不在赔付范围内。",
+      "must_include": [
+        "既往症",
+        "除外责任",
+        "不在赔付范围内"
+      ],
+      "citation_keywords": [
+        "既往症",
+        "除外责任",
+        "赔付范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-080",
+    "category": "既往症限制",
+    "question": "条款把疾病写成免责或除外后，后续治疗费用通常能报吗？",
+    "expected": {
+      "answer_text": "投保前已存在且被合同列为既往症、除外责任或免责事项的疾病，通常不在赔付范围内。",
+      "must_include": [
+        "既往症",
+        "除外责任",
+        "不在赔付范围内"
+      ],
+      "citation_keywords": [
+        "既往症",
+        "除外责任",
+        "赔付范围"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-081",
+    "category": "保险金申请主体",
+    "question": "医疗险理赔一般应该由谁来申请？",
+    "expected": {
+      "answer_text": "保险金申请主体要看责任类型；生存或医疗责任通常由被保险人申请，身故责任一般由受益人或法定继承人申请。",
+      "must_include": [
+        "责任类型",
+        "被保险人",
+        "受益人"
+      ],
+      "citation_keywords": [
+        "保险金申请",
+        "受益人",
+        "法定继承人"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-082",
+    "category": "保险金申请主体",
+    "question": "身故保险金通常是投保人领，还是受益人领？",
+    "expected": {
+      "answer_text": "保险金申请主体要看责任类型；生存或医疗责任通常由被保险人申请，身故责任一般由受益人或法定继承人申请。",
+      "must_include": [
+        "责任类型",
+        "被保险人",
+        "受益人"
+      ],
+      "citation_keywords": [
+        "保险金申请",
+        "受益人",
+        "法定继承人"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-083",
+    "category": "保险金申请主体",
+    "question": "不同责任下，申请保险金的人是不是不一样？",
+    "expected": {
+      "answer_text": "保险金申请主体要看责任类型；生存或医疗责任通常由被保险人申请，身故责任一般由受益人或法定继承人申请。",
+      "must_include": [
+        "责任类型",
+        "被保险人",
+        "受益人"
+      ],
+      "citation_keywords": [
+        "保险金申请",
+        "受益人",
+        "法定继承人"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-084",
+    "category": "保险金申请主体",
+    "question": "如果是生存金或医疗金，通常由谁向保险公司提出申请？",
+    "expected": {
+      "answer_text": "保险金申请主体要看责任类型；生存或医疗责任通常由被保险人申请，身故责任一般由受益人或法定继承人申请。",
+      "must_include": [
+        "责任类型",
+        "被保险人",
+        "受益人"
+      ],
+      "citation_keywords": [
+        "保险金申请",
+        "受益人",
+        "法定继承人"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-085",
+    "category": "保险金申请主体",
+    "question": "受益人不在场时，身故保险金还能由谁来主张？",
+    "expected": {
+      "answer_text": "保险金申请主体要看责任类型；生存或医疗责任通常由被保险人申请，身故责任一般由受益人或法定继承人申请。",
+      "must_include": [
+        "责任类型",
+        "被保险人",
+        "受益人"
+      ],
+      "citation_keywords": [
+        "保险金申请",
+        "受益人",
+        "法定继承人"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-086",
+    "category": "住院津贴",
+    "question": "住院津贴是不是住一天赔一天，还是还有别的限制？",
+    "expected": {
+      "answer_text": "住院津贴通常按实际住院天数给付，但会受免责天数、每日津贴标准和累计给付天数上限约束。",
+      "must_include": [
+        "实际住院天数",
+        "每日津贴标准",
+        "上限"
+      ],
+      "citation_keywords": [
+        "住院津贴",
+        "给付天数",
+        "每日津贴"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-087",
+    "category": "住院津贴",
+    "question": "如果住院时间很长，津贴给付会不会有天数上限？",
+    "expected": {
+      "answer_text": "住院津贴通常按实际住院天数给付，但会受免责天数、每日津贴标准和累计给付天数上限约束。",
+      "must_include": [
+        "实际住院天数",
+        "每日津贴标准",
+        "上限"
+      ],
+      "citation_keywords": [
+        "住院津贴",
+        "给付天数",
+        "每日津贴"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-088",
+    "category": "住院津贴",
+    "question": "住院补贴的计算一般只看住院天数吗？",
+    "expected": {
+      "answer_text": "住院津贴通常按实际住院天数给付，但会受免责天数、每日津贴标准和累计给付天数上限约束。",
+      "must_include": [
+        "实际住院天数",
+        "每日津贴标准",
+        "上限"
+      ],
+      "citation_keywords": [
+        "住院津贴",
+        "给付天数",
+        "每日津贴"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-089",
+    "category": "住院津贴",
+    "question": "条款里的住院津贴为什么还会写每日标准和免责天数？",
+    "expected": {
+      "answer_text": "住院津贴通常按实际住院天数给付，但会受免责天数、每日津贴标准和累计给付天数上限约束。",
+      "must_include": [
+        "实际住院天数",
+        "每日津贴标准",
+        "上限"
+      ],
+      "citation_keywords": [
+        "住院津贴",
+        "给付天数",
+        "每日津贴"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-090",
+    "category": "住院津贴",
+    "question": "住院津贴给付时，除了住院天数外通常还受什么限制？",
+    "expected": {
+      "answer_text": "住院津贴通常按实际住院天数给付，但会受免责天数、每日津贴标准和累计给付天数上限约束。",
+      "must_include": [
+        "实际住院天数",
+        "每日津贴标准",
+        "上限"
+      ],
+      "citation_keywords": [
+        "住院津贴",
+        "给付天数",
+        "每日津贴"
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "gen-091",
+    "category": "证据不足拒答",
+    "question": "客服说下个月可能有返现活动，这种优惠一定算数吗？",
+    "expected": {
+      "answer_text": "合同未明确约定的营销活动、折扣、返现或客服口头承诺，现有证据不足，需以正式条款或官方公告为准。",
+      "must_include": [
+        "证据不足",
+        "正式条款",
+        "官方公告"
+      ],
+      "citation_keywords": [
+        "合同未明确约定",
+        "官方公告",
+        "正式条款"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-092",
+    "category": "证据不足拒答",
+    "question": "合同里没写的保费折扣，能不能直接按销售口头承诺执行？",
+    "expected": {
+      "answer_text": "合同未明确约定的营销活动、折扣、返现或客服口头承诺，现有证据不足，需以正式条款或官方公告为准。",
+      "must_include": [
+        "证据不足",
+        "正式条款",
+        "官方公告"
+      ],
+      "citation_keywords": [
+        "合同未明确约定",
+        "官方公告",
+        "正式条款"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-093",
+    "category": "证据不足拒答",
+    "question": "听业务员说后续会送体检服务，但条款没写，这算正式权益吗？",
+    "expected": {
+      "answer_text": "合同未明确约定的营销活动、折扣、返现或客服口头承诺，现有证据不足，需以正式条款或官方公告为准。",
+      "must_include": [
+        "证据不足",
+        "正式条款",
+        "官方公告"
+      ],
+      "citation_keywords": [
+        "合同未明确约定",
+        "官方公告",
+        "正式条款"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-094",
+    "category": "证据不足拒答",
+    "question": "保险宣传页提到抽奖福利，合同里没体现，我能据此主张吗？",
+    "expected": {
+      "answer_text": "合同未明确约定的营销活动、折扣、返现或客服口头承诺，现有证据不足，需以正式条款或官方公告为准。",
+      "must_include": [
+        "证据不足",
+        "正式条款",
+        "官方公告"
+      ],
+      "citation_keywords": [
+        "合同未明确约定",
+        "官方公告",
+        "正式条款"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-095",
+    "category": "证据不足拒答",
+    "question": "如果只是口头承诺赠送服务，没有写进合同，应该怎么判断？",
+    "expected": {
+      "answer_text": "合同未明确约定的营销活动、折扣、返现或客服口头承诺，现有证据不足，需以正式条款或官方公告为准。",
+      "must_include": [
+        "证据不足",
+        "正式条款",
+        "官方公告"
+      ],
+      "citation_keywords": [
+        "合同未明确约定",
+        "官方公告",
+        "正式条款"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-096",
+    "category": "证据不足拒答",
+    "question": "这种保险能不能报销境外医院的全部治疗费？如果条款没写呢？",
+    "expected": {
+      "answer_text": "对于境外医院、创新疗法、外购药或特药是否赔付，如合同未明确写明，现有证据不足，应提示人工核对条款。",
+      "must_include": [
+        "证据不足",
+        "人工核对",
+        "条款"
+      ],
+      "citation_keywords": [
+        "境外医院",
+        "创新疗法",
+        "条款约定"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-097",
+    "category": "证据不足拒答",
+    "question": "医生建议用创新疗法，但合同没有明确列出来，保险一定赔吗？",
+    "expected": {
+      "answer_text": "对于境外医院、创新疗法、外购药或特药是否赔付，如合同未明确写明，现有证据不足，应提示人工核对条款。",
+      "must_include": [
+        "证据不足",
+        "人工核对",
+        "条款"
+      ],
+      "citation_keywords": [
+        "境外医院",
+        "创新疗法",
+        "条款约定"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-098",
+    "category": "证据不足拒答",
+    "question": "外购药和特药只要医生开了就都能报销吗，条款没写清怎么办？",
+    "expected": {
+      "answer_text": "对于境外医院、创新疗法、外购药或特药是否赔付，如合同未明确写明，现有证据不足，应提示人工核对条款。",
+      "must_include": [
+        "证据不足",
+        "人工核对",
+        "条款"
+      ],
+      "citation_keywords": [
+        "境外医院",
+        "创新疗法",
+        "条款约定"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-099",
+    "category": "证据不足拒答",
+    "question": "如果合同没写境外门诊责任，能不能默认商业险会赔？",
+    "expected": {
+      "answer_text": "对于境外医院、创新疗法、外购药或特药是否赔付，如合同未明确写明，现有证据不足，应提示人工核对条款。",
+      "must_include": [
+        "证据不足",
+        "人工核对",
+        "条款"
+      ],
+      "citation_keywords": [
+        "境外医院",
+        "创新疗法",
+        "条款约定"
+      ],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "gen-100",
+    "category": "证据不足拒答",
+    "question": "新型治疗方式不在合同列举范围内时，应该怎样回答客户？",
+    "expected": {
+      "answer_text": "对于境外医院、创新疗法、外购药或特药是否赔付，如合同未明确写明，现有证据不足，应提示人工核对条款。",
+      "must_include": [
+        "证据不足",
+        "人工核对",
+        "条款"
+      ],
+      "citation_keywords": [
+        "境外医院",
+        "创新疗法",
+        "条款约定"
+      ],
+      "should_abstain": true
+    }
+  }
+]
