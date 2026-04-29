@@ -1,4 +1,4 @@
-# Baichuan Workspace
+# LLMin Workspace
 
 仓库现分层架构：
 
