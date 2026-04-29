@@ -1,0 +1,22 @@
+[
+  {
+    "id": "case-001",
+    "answer": "根据合同第3.2条，等待期为90天。",
+    "citations": [
+      "第3.2条 等待期：本合同等待期为90天。"
+    ],
+    "predicted_slots": {
+      "waiting_period_days": "90"
+    },
+    "latency_ms": 1250,
+    "abstained": false
+  },
+  {
+    "id": "case-007",
+    "answer": "现有条款证据不足，建议人工核对具体责任范围，无法直接承诺100%报销。",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 980,
+    "abstained": true
+  }
+]

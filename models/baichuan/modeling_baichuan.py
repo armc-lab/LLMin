@@ -221,7 +221,8 @@ class Attention(nn.Module):
             value_states = torch.cat([past_key_value[1], value_states], dim=2)
 
         past_key_value = (key_states, value_states) if use_cache else None
-        if xops is not None and self.training:
+        use_flash_attention = os.environ.get("BAICHUAN_USE_FLASH_ATTENTION", "0") == "1"
+        if xops is not None and self.training and use_flash_attention:
             attn_weights = None
             query_states = query_states.transpose(1, 2)
             key_states = key_states.transpose(1, 2)
@@ -230,7 +231,7 @@ class Attention(nn.Module):
                 query_states, key_states, value_states, attn_bias=xops.LowerTriangularMask()
             )
         else:
-            with torch.backends.cuda.sdp_kernel(enable_flash=True, enable_math=True, enable_mem_efficient=True):
+            with torch.backends.cuda.sdp_kernel(enable_flash=False, enable_math=True, enable_mem_efficient=False):
                 attn_output = F.scaled_dot_product_attention(query_states, key_states, value_states, attn_mask = attention_mask)
             attn_output = attn_output.transpose(1, 2)
         attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)

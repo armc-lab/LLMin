@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "silver-0001",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0002",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0003",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0004",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0005",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0006",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0007",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0008",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0009",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0010",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0011",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0012",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0013",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0014",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0015",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0016",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0017",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0018",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0019",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0020",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0021",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0022",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0023",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0024",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0025",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0026",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0027",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0028",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0029",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0030",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0031",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0032",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0033",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0034",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0035",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0036",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0037",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0038",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0039",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0040",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0041",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0042",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0043",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0044",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0045",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0046",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0047",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0048",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0049",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0050",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0051",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0052",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0053",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0054",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0055",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0056",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0057",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0058",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0059",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0060",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0061",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0062",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0063",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0064",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0065",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0066",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0067",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0068",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0069",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0070",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0071",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0072",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0073",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0074",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0075",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0076",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0077",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0078",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0079",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0080",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0081",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0082",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0083",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0084",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0085",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0086",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0087",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0088",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0089",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0090",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0091",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0092",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0093",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0094",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0095",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0096",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0097",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0098",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0099",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  },
+  {
+    "id": "silver-0100",
+    "answer": "",
+    "citations": [],
+    "predicted_slots": {},
+    "latency_ms": 0.0,
+    "abstained": false,
+    "status": "error",
+    "error": "Server error '502 Bad Gateway' for url 'http://127.0.0.1:8001/api/v1/documents/analyze'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+  }
+]

@@ -1,0 +1,30 @@
+# Ignore training outputs and checkpoints
+outputs/
+
+# Chroma DB and other local DB files
+chroma_data/
+*.sqlite3
+
+# VSCode remote server logs
+.vscode-server/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Model/runtime artifacts
+*.pth
+rng_state.pth
+*.bin
+
+# Tokenizer / model local files often generated in outputs
+tokenization_*.py
+tokenizer_config.json
+special_tokens_map.json
+
+# Temporary and logs
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db

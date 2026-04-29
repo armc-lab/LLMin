@@ -1,0 +1,244 @@
+[
+  {
+    "id": "case-001",
+    "category": "coverage",
+    "difficulty": "easy",
+    "question": "这份重疾险合同的等待期是多少天？",
+    "expected": {
+      "answer_text": "等待期为90天。",
+      "answer_aliases": [
+        "等待期90天",
+        "90天等待期"
+      ],
+      "must_include": [
+        "90天",
+        "等待期"
+      ],
+      "must_not_include": [
+        "立即生效"
+      ],
+      "slots": {
+        "waiting_period_days": "90"
+      },
+      "citation_keywords": [
+        "等待期",
+        "第3.2条"
+      ],
+      "numeric_constraints": [
+        {
+          "name": "waiting_period_days",
+          "value": "90"
+        }
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "case-002",
+    "category": "exclusion",
+    "difficulty": "medium",
+    "question": "投保前已确诊疾病是否在责任免除范围内？",
+    "expected": {
+      "answer_text": "若属于合同列明的既往症，通常不承担赔付责任。",
+      "answer_aliases": [
+        "既往症一般不赔",
+        "既往症属于免责"
+      ],
+      "must_include": [
+        "既往症",
+        "免责"
+      ],
+      "must_not_include": [
+        "无条件赔付"
+      ],
+      "slots": {
+        "pre_existing_disease_covered": "no"
+      },
+      "citation_keywords": [
+        "责任免除",
+        "既往症"
+      ],
+      "numeric_constraints": [],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "case-003",
+    "category": "claim_ratio",
+    "difficulty": "easy",
+    "question": "住院医疗费用报销比例是多少？",
+    "expected": {
+      "answer_text": "经社保结算后，按80%比例赔付。",
+      "answer_aliases": [
+        "报销比例80%",
+        "按80%赔付"
+      ],
+      "must_include": [
+        "80%"
+      ],
+      "must_not_include": [
+        "100%"
+      ],
+      "slots": {
+        "claim_ratio": "80%"
+      },
+      "citation_keywords": [
+        "赔付比例",
+        "80%"
+      ],
+      "numeric_constraints": [
+        {
+          "name": "claim_ratio",
+          "value": "80%"
+        }
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "case-004",
+    "category": "deductible",
+    "difficulty": "easy",
+    "question": "这份合同每次理赔的免赔额是多少？",
+    "expected": {
+      "answer_text": "每次事故免赔额为1000元。",
+      "answer_aliases": [
+        "免赔额1000元",
+        "每次免赔1000"
+      ],
+      "must_include": [
+        "1000",
+        "免赔额"
+      ],
+      "must_not_include": [
+        "免赔额0元"
+      ],
+      "slots": {
+        "deductible_amount": "1000"
+      },
+      "citation_keywords": [
+        "免赔额",
+        "1000元"
+      ],
+      "numeric_constraints": [
+        {
+          "name": "deductible_amount",
+          "value": "1000"
+        }
+      ],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "case-005",
+    "category": "effective_date",
+    "difficulty": "medium",
+    "question": "合同从什么时候开始生效？",
+    "expected": {
+      "answer_text": "自首期保费成功支付且核保通过次日零时生效。",
+      "answer_aliases": [
+        "首期保费支付并核保通过后次日生效",
+        "次日零时生效"
+      ],
+      "must_include": [
+        "次日",
+        "生效"
+      ],
+      "must_not_include": [
+        "签字即生效"
+      ],
+      "slots": {
+        "effective_trigger": "首期保费支付+核保通过",
+        "effective_time": "次日零时"
+      },
+      "citation_keywords": [
+        "合同生效",
+        "次日零时"
+      ],
+      "numeric_constraints": [],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "case-006",
+    "category": "claim_material",
+    "difficulty": "medium",
+    "question": "申请理赔需要提供哪些核心材料？",
+    "expected": {
+      "answer_text": "通常需提供理赔申请书、被保险人身份证明、医疗费用原始票据和诊断证明。",
+      "answer_aliases": [
+        "理赔申请书+身份证明+票据+诊断证明",
+        "核心材料包括申请书和医疗票据"
+      ],
+      "must_include": [
+        "理赔申请书",
+        "身份证明",
+        "票据",
+        "诊断证明"
+      ],
+      "must_not_include": [],
+      "slots": {
+        "materials": "理赔申请书|身份证明|票据|诊断证明"
+      },
+      "citation_keywords": [
+        "理赔材料",
+        "诊断证明"
+      ],
+      "numeric_constraints": [],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "case-007",
+    "category": "out_of_scope",
+    "difficulty": "hard",
+    "question": "该合同是否支持海外门诊产生的全部费用100%报销？",
+    "expected": {
+      "answer_text": "合同未明确约定时应拒答并提示人工核对，不应直接承诺100%报销。",
+      "answer_aliases": [
+        "证据不足应拒答",
+        "需人工核对"
+      ],
+      "must_include": [
+        "证据不足",
+        "人工核对"
+      ],
+      "must_not_include": [
+        "100%报销"
+      ],
+      "slots": {},
+      "citation_keywords": [],
+      "numeric_constraints": [],
+      "should_abstain": true
+    }
+  },
+  {
+    "id": "case-008",
+    "category": "waiting_period_edge",
+    "difficulty": "hard",
+    "question": "等待期内发生疾病但等待期后确诊，是否理赔？",
+    "expected": {
+      "answer_text": "需依据条款对发病时间与确诊时间的定义判断，不应脱离条款泛化回答。",
+      "answer_aliases": [
+        "需按条款定义判断",
+        "应结合发病和确诊时间"
+      ],
+      "must_include": [
+        "发病时间",
+        "确诊时间",
+        "条款"
+      ],
+      "must_not_include": [],
+      "slots": {
+        "requires_clause_interpretation": "yes"
+      },
+      "citation_keywords": [
+        "等待期",
+        "发病",
+        "确诊"
+      ],
+      "numeric_constraints": [],
+      "should_abstain": false
+    }
+  }
+]

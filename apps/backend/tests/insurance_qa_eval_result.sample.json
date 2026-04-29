@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-04-24T21:08:21",
+  "candidate_metrics": {
+    "total_cases": 8,
+    "answered_cases": 2,
+    "missing_predictions": 6,
+    "exact_match": 0.0,
+    "token_f1": 0.5614,
+    "must_include_recall": 1.0,
+    "must_not_include_violation_rate": 0.5,
+    "slot_precision": 1.0,
+    "slot_recall": 1.0,
+    "slot_f1": 1.0,
+    "citation_hit_rate": 1.0,
+    "groundedness": 0.5,
+    "numeric_consistency": 1.0,
+    "abstention_precision": 1.0,
+    "abstention_recall": 1.0,
+    "abstention_f1": 1.0,
+    "avg_latency_ms": 1115.0,
+    "p50_latency_ms": 980.0,
+    "p95_latency_ms": 1250.0,
+    "composite_score": 0.7692
+  },
+  "details": [
+    {
+      "id": "case-001",
+      "em": false,
+      "token_f1": 0.6154,
+      "abstained": false,
+      "should_abstain": false
+    },
+    {
+      "id": "case-002",
+      "ok": false,
+      "error": "missing_prediction"
+    },
+    {
+      "id": "case-003",
+      "ok": false,
+      "error": "missing_prediction"
+    },
+    {
+      "id": "case-004",
+      "ok": false,
+      "error": "missing_prediction"
+    },
+    {
+      "id": "case-005",
+      "ok": false,
+      "error": "missing_prediction"
+    },
+    {
+      "id": "case-006",
+      "ok": false,
+      "error": "missing_prediction"
+    },
+    {
+      "id": "case-007",
+      "em": false,
+      "token_f1": 0.5075,
+      "abstained": true,
+      "should_abstain": true
+    },
+    {
+      "id": "case-008",
+      "ok": false,
+      "error": "missing_prediction"
+    }
+  ]
+}

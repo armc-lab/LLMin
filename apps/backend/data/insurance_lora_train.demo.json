@@ -1,0 +1,24 @@
+[
+  {
+    "id": "demo-001",
+    "category": "健康告知",
+    "question": "若投保时未如实告知既往病史，是否会影响理赔结果？",
+    "expected": {
+      "answer_text": "若未如实告知且影响承保决定，保险公司可依条款拒赔。",
+      "must_include": ["如实告知", "拒赔", "条款"],
+      "citation_keywords": ["11.6", "如实告知", "明确说明"],
+      "should_abstain": false
+    }
+  },
+  {
+    "id": "demo-002",
+    "category": "证据不足拒答",
+    "question": "合同没写的特殊病种是不是一定赔？",
+    "expected": {
+      "answer_text": "现有证据不足，无法确认是否赔付，建议人工核对条款。",
+      "must_include": ["证据不足", "人工核对"],
+      "citation_keywords": ["条款", "证据"],
+      "should_abstain": true
+    }
+  }
+]
