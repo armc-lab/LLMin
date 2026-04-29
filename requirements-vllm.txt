@@ -1,0 +1,2 @@
+# Optional dependencies for running the local vLLM model server on this machine
+vllm==0.6.6.post1

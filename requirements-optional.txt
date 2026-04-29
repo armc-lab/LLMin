@@ -1,0 +1,2 @@
+# Optional utilities not required for the main frontend/backend flow
+bitsandbytes>=0.43,<1.0
