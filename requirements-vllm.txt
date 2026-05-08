@@ -1,2 +1,3 @@
-# Optional dependencies for running the local vLLM model server on this machine
+# vLLM runtime for the project .venv.
+# vLLM 0.6.6.post1 pins torch==2.5.1 and installs CUDA 12.4 wheels on Linux.
 vllm==0.6.6.post1

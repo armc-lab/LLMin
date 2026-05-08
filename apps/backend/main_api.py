@@ -6,6 +6,7 @@ import httpx
 import fitz  # PyMuPDF
 import numpy as np
 import re
+import json
 from pathlib import Path
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -27,13 +28,17 @@ from sentence_transformers import SentenceTransformer
 # =========================
 BACKEND_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BACKEND_DIR.parents[1]
-DEFAULT_MODEL_DIR = PROJECT_ROOT / "models" / "baichuan"
 DEFAULT_EMBEDDING_MODEL_DIR = BACKEND_DIR / "bge-large-zh-v1.5-local"
 DEFAULT_CHROMA_DB_PATH = BACKEND_DIR / "chroma_data"
 
 APP_PORT = 8001
-VLLM_API_URL = os.getenv("VLLM_API_URL", "http://localhost:8000/v1/chat/completions")
-VLLM_MODEL_PATH = os.getenv("VLLM_MODEL_PATH", str(DEFAULT_MODEL_DIR))
+VLLM_API_URL = os.getenv("VLLM_API_URL", "http://127.0.0.1:8000/v1/chat/completions")
+VLLM_MODEL = (
+    os.getenv("VLLM_MODEL")
+    or os.getenv("SERVED_MODEL_NAME")
+    or os.getenv("VLLM_MODEL_PATH")
+    or "baichuan"
+)
 USE_RAG = os.getenv("USE_RAG", "1").lower() in {"1", "true", "yes", "on"}
 
 # Embedding：放 CPU，避免与 vLLM 抢显存
@@ -115,7 +120,7 @@ def parse_pdf_text(file_content: bytes) -> str:
 async def call_vllm(prompt: str, temperature: float = 0.0) -> str:
     """调用 vLLM /v1/chat/completions（OpenAI 兼容）"""
     payload = {
-        "model": VLLM_MODEL_PATH,
+        "model": VLLM_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": temperature,
     }
@@ -447,6 +452,315 @@ def build_insurance_prompt(context: str, question: str) -> str:
 ---
 """
 
+
+async def analyze_contract_text(filename: str, full_text: str) -> Dict[str, Any]:
+    """解析后的合同文本入库，并建立 Chroma 向量索引。"""
+    if not full_text or not full_text.strip():
+        raise HTTPException(status_code=400, detail="文档内容为空或无法解析。")
+
+    summary_prompt = (
+        "你是专业的保险合同分析引擎。请在不超过50字内给出摘要，必须包含：合同性质、核心保障、关键免责条款。"
+        f"\n\n合同文本（可能截断）：\n{full_text[:3000]}"
+    )
+    summary = await call_vllm(summary_prompt, temperature=0.2)
+    summary = dedup_summary_lines(summary, max_lines=8)
+
+    keyword_prompt = (
+        "请从以下合同文本中提取最多5个关键词或短语，作为用户可能关心的问题主题，返回 JSON 数组，示例：[\"重大疾病\", \"健康告知\", \"保费计算\"]。"
+        f"\n\n合同文本（可能截断）：\n{full_text[:4000]}"
+    )
+    suggested_keywords: List[str] = []
+    try:
+        kw_raw = await call_vllm(keyword_prompt, temperature=0.0)
+        try:
+            parsed = json.loads(kw_raw)
+            if isinstance(parsed, list):
+                for item in parsed[:5]:
+                    s = str(item).strip()
+                    if s:
+                        suggested_keywords.append(s)
+        except Exception:
+            for part in re.split(r"[\n,，;；]+", str(kw_raw))[:5]:
+                s = part.strip()
+                if s:
+                    suggested_keywords.append(s)
+    except Exception as e:
+        print('关键词提取失败：', e)
+        suggested_keywords = []
+
+    chunks = split_by_length(full_text, max_len=800)
+    if not chunks:
+        raise HTTPException(status_code=400, detail="文档内容为空或无法分块。")
+
+    print(f"正在为 {len(chunks)} 个文本块创建向量...")
+    chunk_embeddings = embedding_model.encode(chunks, normalize_embeddings=True)
+    chunk_embeddings = np.asarray(chunk_embeddings, dtype="float32")
+    print("向量创建完成。")
+
+    doc_id = f"doc-{uuid.uuid4()}"
+    print(f"正在为 {len(chunks)} 个文本块创建 Chroma 索引...")
+    collection = chroma_client.get_or_create_collection(
+        name=doc_id,
+        metadata={"hnsw:space": "cosine"}
+    )
+    ids = [f"{doc_id}_{i}" for i in range(len(chunks))]
+    metadatas = [{"chunk_index": i, "doc_id": doc_id} for i in range(len(chunks))]
+    collection.add(
+        ids=ids,
+        embeddings=chunk_embeddings.tolist(),
+        documents=chunks,
+        metadatas=metadatas
+    )
+    print("Chroma 检索引擎构建完成。")
+
+    DATABASE["documents"][doc_id] = {
+        "filename": filename,
+        "summary": summary,
+        "chunks": chunks,
+        "collection_name": doc_id,
+        "suggested_keywords": suggested_keywords,
+    }
+    DATABASE["conversations"][doc_id] = []
+
+    return {
+        "document_id": doc_id,
+        "filename": filename,
+        "summary": summary,
+        "suggested_keywords": suggested_keywords,
+    }
+
+
+def get_document_or_restore(doc_id: str) -> Dict[str, Any]:
+    """从内存读取文档；若服务重启后内存丢失，则尝试从 Chroma 恢复分块。"""
+    if doc_id in DATABASE["documents"]:
+        return DATABASE["documents"][doc_id]
+
+    try:
+        collection = chroma_client.get_collection(name=doc_id)
+        all_data = collection.get()
+        if all_data and all_data.get("documents"):
+            sorted_docs = [
+                doc for _, doc in sorted(
+                    zip(all_data["metadatas"], all_data["documents"]),
+                    key=lambda x: x[0].get("chunk_index", 0)
+                )
+            ]
+            DATABASE["documents"][doc_id] = {
+                "filename": "已归档的文档_恢复.pdf",
+                "summary": "（因服务重启，该文档从向量数据库中自动恢复）",
+                "chunks": sorted_docs,
+                "collection_name": doc_id,
+                "suggested_keywords": [],
+            }
+            if doc_id not in DATABASE["conversations"]:
+                DATABASE["conversations"][doc_id] = []
+            return DATABASE["documents"][doc_id]
+        raise Exception("Chroma 集合是空的")
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=f"文档ID '{doc_id}' 不存在，且尝试从向量数据库恢复失败。({str(e)})")
+
+
+def retrieve_contract_context(
+    document_id: str,
+    question: str,
+    max_context_length: int = 4000,
+    max_results: int = 0,
+    candidate_limit: int = 24,
+    sim_threshold: float = 0.33,
+) -> Dict[str, Any]:
+    """执行规则优先 + Chroma 语义检索，返回生成用上下文与引用片段。"""
+    doc_data = get_document_or_restore(document_id)
+    all_chunks: List[str] = doc_data.get("chunks", [])
+    if not all_chunks:
+        raise HTTPException(status_code=500, detail="分块数据不存在，请重新上传文档。")
+
+    query_hint = build_query_hint(question)
+    context = ""
+    citations: List[Dict[str, Any]] = []
+
+    if not USE_RAG:
+        print("USE_RAG=0，跳过检索流程。")
+        return {
+            "context": context,
+            "citations": citations,
+            "query_hint": query_hint,
+            "status": "miss",
+        }
+
+    print("正在为问题进行语义检索...")
+    collection_name = doc_data.get("collection_name")
+    collection = chroma_client.get_collection(name=collection_name)
+
+    effective_query = (question + " " + query_hint).strip()
+    query_terms = extract_query_terms(question, query_hint)
+
+    q_emb = embedding_model.encode([effective_query], normalize_embeddings=True)
+    q_emb = np.asarray(q_emb, dtype="float32")
+
+    k = min(max(candidate_limit, max_results or 0, 1), len(all_chunks))
+    results = collection.query(
+        query_embeddings=q_emb.tolist(),
+        n_results=k,
+        include=["documents", "distances", "metadatas"]
+    )
+
+    sim_map: Dict[int, float] = {}
+    if results["ids"] and len(results["ids"]) > 0:
+        for idx_str, dist in zip(results["ids"][0], results["distances"][0]):
+            chunk_idx = int(idx_str.rsplit("_", 1)[1])
+            sim_map[chunk_idx] = 1 - dist
+
+    prio = rule_priority_indices(all_chunks, question)
+    prio_set = set(prio)
+
+    chroma_indices = [int(idx_str.rsplit("_", 1)[1]) for idx_str in results["ids"][0]] if results["ids"] and len(results["ids"]) > 0 else []
+    candidate_set = set(chroma_indices + prio)
+
+    lexical_map: Dict[int, float] = {}
+    for i in candidate_set:
+        lexical_map[i] = lexical_overlap_score(all_chunks[i], query_terms)
+
+    max_lex = max(lexical_map.values()) if lexical_map else 0.0
+    if max_lex <= 0:
+        max_lex = 1.0
+
+    def fused_score(i: int) -> float:
+        sem = sim_map.get(i, 0.0)
+        lex = lexical_map.get(i, 0.0) / max_lex
+        rule_bonus = 0.30 if i in prio_set else 0.0
+        return 0.62 * sem + 0.38 * lex + rule_bonus
+
+    ordered = sorted(candidate_set, key=fused_score, reverse=True)
+    ordered = prio + [i for i in ordered if i not in prio_set]
+
+    ctx_parts, cur_len = [], 0
+    used = set()
+    for i in ordered:
+        if i < 0 or i >= len(all_chunks) or i in used:
+            continue
+        if max_results > 0 and len(citations) >= max_results:
+            break
+
+        if i in prio:
+            seg = f"[规则优先]\n{all_chunks[i]}"
+        else:
+            s = sim_map.get(i, 0.0)
+            if s < sim_threshold:
+                continue
+            seg = f"[相似度:{s:.2f}]\n{all_chunks[i]}"
+
+        seg_len = len(seg) + 8
+        if cur_len + seg_len <= max_context_length:
+            ctx_parts.append(seg)
+            cur_len += seg_len
+            used.add(i)
+
+            snippet = build_citation_snippet(all_chunks[i], query_terms, max_len=320)
+            citations.append({
+                'index': int(i),
+                'text': snippet,
+                'score': round(float(fused_score(i)), 4),
+            })
+        else:
+            break
+
+    context = "\n\n---\n\n".join(ctx_parts)
+    return {
+        "context": context,
+        "citations": citations,
+        "query_hint": query_hint,
+        "status": "hit" if citations else "miss",
+    }
+
+
+async def answer_contract_question(document_id: str, question: str, save_history: bool = True) -> Dict[str, Any]:
+    """完整 RAG 问答流程，供 FastAPI 与 MCP Server 共同调用。"""
+    retrieval = retrieve_contract_context(document_id, question)
+    context = retrieval["context"]
+    citations = retrieval["citations"]
+
+    rag_prompt = build_insurance_prompt(context, question)
+    final_answer = await call_vllm(rag_prompt, temperature=0.0)
+    final_answer = sanitize_model_output(final_answer)
+
+    parsed = extract_three_part_response(final_answer)
+    if parsed:
+        parts = []
+        if parsed.get('conclusion'):
+            parts.append(f"结论：{parsed['conclusion']}")
+        if parsed.get('basis'):
+            parts.append("合同依据：")
+            parts.extend([f"- {b}" for b in parsed['basis']])
+        if parsed.get('suggestions'):
+            parts.append("处理建议：")
+            parts.extend([f"- {s}" for s in parsed['suggestions']])
+        final_answer = "\n\n".join(parts)
+
+    if save_history:
+        DATABASE["conversations"].setdefault(document_id, [])
+        DATABASE["conversations"][document_id].append({"role": "user", "content": question})
+        DATABASE["conversations"][document_id].append({"role": "assistant", "content": final_answer})
+
+    recommendations = []
+    summary_text = (final_answer[:1000] + '...') if len(final_answer) > 1000 else final_answer
+    summary_text = sanitize_model_output(summary_text)
+    try:
+        if summary_text and final_answer and (summary_text.strip() in final_answer.strip() or final_answer.strip() in summary_text.strip()):
+            summary_text = ''
+    except Exception:
+        pass
+
+    try:
+        rec_prompt = (
+            "请根据以下回答给出最多 3 条可执行的建议（每条不超过 50 字），以 JSON 数组形式返回：\n\n"
+            f"回答:\n{final_answer}\n\n相关上下文片段:\n{context[:2000]}"
+        )
+        recs_raw = await call_vllm(rec_prompt, temperature=0.2)
+        try:
+            recs_parsed = json.loads(recs_raw)
+            if isinstance(recs_parsed, list):
+                recommendations = [str(x) for x in recs_parsed][:3]
+        except Exception:
+            recommendations = [line.strip() for line in recs_raw.splitlines() if line.strip()][:3]
+    except Exception as e:
+        print('生成建议失败：', e)
+
+    return {
+        'answer': final_answer,
+        'summary': summary_text,
+        'status': retrieval["status"],
+        'citations': citations,
+        'recommendations': recommendations,
+    }
+
+
+async def build_archive_payload(document_id: str, archive_type: str = "session_summary") -> Dict[str, Any]:
+    """生成归档数据包，供 FastAPI 与 MCP Server 共同调用。"""
+    if document_id not in DATABASE["conversations"]:
+        raise HTTPException(status_code=404, detail=f"文档ID '{document_id}' 的会话历史不存在。")
+
+    chat_history = DATABASE["conversations"][document_id]
+    if not chat_history:
+        raise HTTPException(status_code=400, detail="该文档没有会话历史，无法生成报告。")
+
+    chat_history_str = "\n".join([f"{item['role']}: {item['content']}" for item in chat_history])
+    report_prompt = (
+        "你是归档机器人。根据【对话历史】生成 Markdown 会话总结报告，必须包含两个段落："
+        "【核心问题】、【最终结论】；语言简洁明确。\n\n"
+        f"【对话历史】:\n{chat_history_str}\n\n请输出报告："
+    )
+    markdown_report = await call_vllm(report_prompt, temperature=0.2)
+
+    return {
+        "archive_id": f"archive-{uuid.uuid4()}",
+        "archive_type": archive_type,
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "source_document_id": document_id,
+        "generated_report_markdown": markdown_report,
+        "model_version": "Baichuan-7B-v1.0-RAG-v3.1",
+    }
+
+
 # =========================
 # 4) FastAPI 应用
 # =========================
@@ -485,323 +799,17 @@ async def analyze_document(file: UploadFile = File(...)):
 
     contents = await file.read()
     full_text = parse_pdf_text(contents) if file.filename.lower().endswith(".pdf") else contents.decode("utf-8")
-
-    # 摘要（截断以控 token）
-    summary_prompt = (
-        "你是专业的保险合同分析引擎。请在不超过50字内给出摘要，必须包含：合同性质、核心保障、关键免责条款。"
-        f"\n\n合同文本（可能截断）：\n{full_text[:3000]}"
-    )
-    summary = await call_vllm(summary_prompt, temperature=0.2)
-    summary = dedup_summary_lines(summary, max_lines=8)
-
-    # 提取关键词（最多5个短语），用于前端生成建议问题
-    keyword_prompt = (
-        "请从以下合同文本中提取最多5个关键词或短语，作为用户可能关心的问题主题，返回 JSON 数组，示例：[\"重大疾病\", \"健康告知\", \"保费计算\"]。"
-        f"\n\n合同文本（可能截断）：\n{full_text[:4000]}"
-    )
-    suggested_keywords = []
-    try:
-        kw_raw = await call_vllm(keyword_prompt, temperature=0.0)
-        import json
-        try:
-            parsed = json.loads(kw_raw)
-            if isinstance(parsed, list):
-                # 清理并限制长度
-                for item in parsed[:5]:
-                    s = str(item).strip()
-                    if s:
-                        suggested_keywords.append(s)
-        except Exception:
-            # 回退：按换行或逗号分割，取前5个
-            for part in re.split(r"[\n,，;；]+", str(kw_raw))[:5]:
-                s = part.strip()
-                if s:
-                    suggested_keywords.append(s)
-    except Exception as e:
-        print('关键词提取失败：', e)
-        suggested_keywords = []
-
-    # 分块 + 向量化（归一化后用 IP 即余弦）
-    chunks = split_by_length(full_text, max_len=800)
-    if not chunks:
-        raise HTTPException(status_code=400, detail="文档内容为空或无法分块。")
-
-    print(f"正在为 {len(chunks)} 个文本块创建向量...")
-    chunk_embeddings = embedding_model.encode(chunks, normalize_embeddings=True)
-    chunk_embeddings = np.asarray(chunk_embeddings, dtype="float32")
-    print("向量创建完成。")
-
-    # ===== 原 FAISS 索引创建 (已迁移到 Chroma) =====
-    # faiss_index = faiss.IndexFlatIP(chunk_embeddings.shape[1])  # 余弦相似度（归一化后IP≈cosine）
-    # faiss_index.add(chunk_embeddings)
-    # print("FAISS（cosine）检索引擎构建完成。")
-
-    # ===== 新 Chroma 索引创建 =====
-    doc_id = f"doc-{uuid.uuid4()}"
-    print(f"正在为 {len(chunks)} 个文本块创建 Chroma 索引...")
-    collection = chroma_client.get_or_create_collection(
-        name=doc_id,
-        metadata={"hnsw:space": "cosine"}  # 使用余弦相似度
-    )
-    ids = [f"{doc_id}_{i}" for i in range(len(chunks))]
-    metadatas = [{"chunk_index": i, "doc_id": doc_id} for i in range(len(chunks))]
-    collection.add(
-        ids=ids,
-        embeddings=chunk_embeddings.tolist(),
-        documents=chunks,
-        metadatas=metadatas
-    )
-    print("Chroma 检索引擎构建完成。")
-
-    # ===== 数据库结构调整 =====
-    # 原: DATABASE["documents"][doc_id] = {..., "faiss_index": faiss_index, ...}
-    # 新: 不存储 faiss_index，改为存储 collection_name
-    DATABASE["documents"][doc_id] = {
-        "filename": file.filename,
-        "summary": summary,
-        "chunks": chunks,
-        "collection_name": doc_id,  # 指向 Chroma collection
-        "suggested_keywords": suggested_keywords,
-    }
-    DATABASE["conversations"][doc_id] = []
-
-    return {"success": True, "data": {"document_id": doc_id, "filename": file.filename, "summary": summary, "suggested_keywords": suggested_keywords}}
+    data = await analyze_contract_text(file.filename, full_text)
+    return {"success": True, "data": data}
 
 @app.post("/api/v1/chat/completions", response_model=ChatResponse, tags=["2. 核心问答 (语义检索)"])
 async def handle_chat_completion(request: ChatRequest):
-    doc_id = request.document_id
-    
-    if doc_id not in DATABASE["documents"]:
-        # 尝试从 ChromaDB 中恢复数据
-        try:
-            collection = chroma_client.get_collection(name=doc_id)
-            all_data = collection.get()
-            if all_data and all_data.get("documents"):
-                # 根据存入时的 chunk_index 保证原有块的顺序
-                sorted_docs = [
-                    doc for _, doc in sorted(
-                        zip(all_data["metadatas"], all_data["documents"]),
-                        key=lambda x: x[0].get("chunk_index", 0)
-                    )
-                ]
-                DATABASE["documents"][doc_id] = {
-                    "filename": "已归档的文档_恢复.pdf", 
-                    "summary": "（因服务重启，该文档从向量数据库中自动恢复）",
-                    "chunks": sorted_docs,
-                    "collection_name": doc_id,
-                    "suggested_keywords": [],
-                }
-                if doc_id not in DATABASE["conversations"]:
-                    DATABASE["conversations"][doc_id] = []
-            else:
-                raise Exception("Chroma 集合是空的")
-        except Exception as e:
-            raise HTTPException(status_code=404, detail=f"文档ID '{doc_id}' 不存在，且尝试从向量数据库恢复失败。({str(e)})")
-
-    doc_data = DATABASE["documents"][doc_id]
-    all_chunks: List[str] = doc_data.get("chunks", [])
-
-    # ===== 原 FAISS 检索 (已迁移到 Chroma) =====
-    # faiss_index = doc_data.get("faiss_index")
-    # if not faiss_index or not all_chunks:
-    #     raise HTTPException(status_code=500, detail="检索引擎或分块数据不存在，请重新上传文档。")
-
-    # ===== 新 Chroma 检索 =====
-    if not all_chunks:
-        raise HTTPException(status_code=500, detail="分块数据不存在，请重新上传文档。")
-
-    collection_name = doc_data.get("collection_name")
-    collection = chroma_client.get_collection(name=collection_name)
-
-    query_hint = build_query_hint(request.question)
-    context = ""
-    citations = []
-
-    if USE_RAG:
-        print("正在为问题进行语义检索...")
-        # 加入查询提示词（query hint）以提升命中关键条款概率
-        effective_query = (request.question + " " + query_hint).strip()
-        query_terms = extract_query_terms(request.question, query_hint)
-
-        q_emb = embedding_model.encode([effective_query], normalize_embeddings=True)
-        q_emb = np.asarray(q_emb, dtype="float32")
-
-        # 扩大候选并融合语义分数 + 词法分数 + 规则优先分数。
-        k = min(24, len(all_chunks))
-        results = collection.query(
-            query_embeddings=q_emb.tolist(),
-            n_results=k,
-            include=["documents", "distances", "metadatas"]
-        )
-
-        # 转换结果格式：Chroma 返回距离，需要转换为相似度
-        # 对于余弦空间：similarity = 1 - distance
-        SIM_THRESHOLD = 0.33
-        sim_map: Dict[int, float] = {}
-        if results["ids"] and len(results["ids"]) > 0:
-            for idx_str, dist in zip(results["ids"][0], results["distances"][0]):
-                chunk_idx = int(idx_str.split("_")[1])
-                sim = 1 - dist  # 转换距离为相似度
-                sim_map[chunk_idx] = sim
-
-        # ===== 后续处理保持不变 =====
-        # 规则优先条款、候选集合、融合评分等逻辑无需改动
-
-        # 规则优先条款
-        prio = rule_priority_indices(all_chunks, request.question)
-        prio_set = set(prio)
-
-        lexical_map: Dict[int, float] = {}
-        # 从 Chroma 结果构建候选集合（从 results["ids"][0] 提取 chunk_idx）
-        chroma_indices = [int(idx_str.split("_")[1]) for idx_str in results["ids"][0]] if results["ids"] and len(results["ids"]) > 0 else []
-        candidate_set = set(chroma_indices + prio)
-        for i in candidate_set:
-            lexical_map[i] = lexical_overlap_score(all_chunks[i], query_terms)
-
-        max_lex = max(lexical_map.values()) if lexical_map else 0.0
-        if max_lex <= 0:
-            max_lex = 1.0
-
-        def fused_score(i: int) -> float:
-            sem = sim_map.get(i, 0.0)
-            lex = lexical_map.get(i, 0.0) / max_lex
-            rule_bonus = 0.30 if i in prio_set else 0.0
-            return 0.62 * sem + 0.38 * lex + rule_bonus
-
-        ordered = sorted(candidate_set, key=fused_score, reverse=True)
-        # 确保规则优先块至少排在最前面的若干位。
-        ordered = prio + [i for i in ordered if i not in prio_set]
-
-        # 拼接上下文（带相似度标签），限制长度
-        MAX_CONTEXT_LENGTH = 4000
-        ctx_parts, cur_len = [], 0
-        used = set()
-        for i in ordered:
-            if i < 0 or i >= len(all_chunks) or i in used:
-                continue
-            # 对于规则优先的块，没有相似度；FAISS 检索块读取相似度
-            if i in prio:
-                seg = f"[规则优先]\n{all_chunks[i]}"
-                s = sim_map.get(i)
-            else:
-                # 找到该 i 在 faiss 返回中的相似度
-                s = sim_map.get(i, 0.0)
-                if s < SIM_THRESHOLD:
-                    continue
-                seg = f"[相似度:{s:.2f}]\n{all_chunks[i]}"
-
-            seg_len = len(seg) + 8
-            if cur_len + seg_len <= MAX_CONTEXT_LENGTH:
-                ctx_parts.append(seg)
-                cur_len += seg_len
-                used.add(i)
-
-                # 添加到 citations 列表（用于前端显示）
-                # 缩短并去除换行，避免返回分数或过长片段
-                snippet = build_citation_snippet(all_chunks[i], query_terms, max_len=320)
-                citations.append({
-                    'index': int(i),
-                    'text': snippet,
-                    'score': round(float(fused_score(i)), 4),
-                })
-            else:
-                break
-
-        context = "\n\n---\n\n".join(ctx_parts)
-    else:
-        print("USE_RAG=0，跳过检索流程，直接进行生成回答。")
-
-    # 结构化、严格可引用提示词
-    rag_prompt = build_insurance_prompt(context, request.question)
-    final_answer = await call_vllm(rag_prompt, temperature=0.0)
-
-    # 清洗模型输出，去除特殊符号与上下文块，便于前端直接展示
-    final_answer = sanitize_model_output(final_answer)
-
-    # 尝试解析为三部分（结论 / 合同依据 / 处理建议），若解析成功则用解析结果生成简洁回答
-    parsed = extract_three_part_response(final_answer)
-    if parsed:
-        parts = []
-        if parsed.get('conclusion'):
-            parts.append(f"结论：{parsed['conclusion']}")
-        if parsed.get('basis'):
-            parts.append("合同依据：")
-            parts.extend([f"- {b}" for b in parsed['basis']])
-        if parsed.get('suggestions'):
-            parts.append("处理建议：")
-            parts.extend([f"- {s}" for s in parsed['suggestions']])
-        final_answer = "\n\n".join(parts)
-
-    # 记入会话（保存原始文本）
-    DATABASE["conversations"][doc_id].append({"role": "user", "content": request.question})
-    DATABASE["conversations"][doc_id].append({"role": "assistant", "content": final_answer})
-
-    # 生成简短摘要与可执行建议（请求模型输出 JSON 数组），若失败则回退为简单文本处理
-    recommendations = []
-    summary_text = (final_answer[:1000] + '...') if len(final_answer) > 1000 else final_answer
-    summary_text = sanitize_model_output(summary_text)
-    # 如果摘要与最终回答高度重复（包含或被包含），则不再返回摘要以避免复读
-    try:
-        if summary_text and final_answer and (summary_text.strip() in final_answer.strip() or final_answer.strip() in summary_text.strip()):
-            summary_text = ''
-    except Exception:
-        pass
-    try:
-        rec_prompt = (
-            "请根据以下回答给出最多 3 条可执行的建议（每条不超过 50 字），以 JSON 数组形式返回：\n\n"
-            f"回答:\n{final_answer}\n\n相关上下文片段:\n{context[:2000]}"
-        )
-        recs_raw = await call_vllm(rec_prompt, temperature=0.2)
-        import json
-        try:
-            recs_parsed = json.loads(recs_raw)
-            if isinstance(recs_parsed, list):
-                recommendations = [str(x) for x in recs_parsed][:3]
-        except Exception:
-            # 回退：按行拆分并取前3条有意义的行
-            recommendations = [line.strip() for line in recs_raw.splitlines() if line.strip()][:3]
-    except Exception as e:
-        print('生成建议失败：', e)
-
-    status = 'hit' if len(citations) > 0 else 'miss'
-
-    response_data = {
-        'answer': final_answer,
-        'summary': summary_text,
-        'status': status,
-        'citations': citations,
-        'recommendations': recommendations
-    }
-
+    response_data = await answer_contract_question(request.document_id, request.question, save_history=True)
     return {"success": True, "data": response_data}
 
 @app.post("/api/v1/archive/generate-and-submit", response_model=ArchiveResponse, tags=["3. 报告生成与归档"])
 async def generate_and_submit_archive(request: ArchiveRequest):
-    doc_id = request.document_id
-    if doc_id not in DATABASE["conversations"]:
-        raise HTTPException(status_code=404, detail=f"文档ID '{doc_id}' 的会话历史不存在。")
-
-    chat_history = DATABASE["conversations"][doc_id]
-    if not chat_history:
-        raise HTTPException(status_code=400, detail="该文档没有会话历史，无法生成报告。")
-
-    chat_history_str = "\n".join([f"{item['role']}: {item['content']}" for item in chat_history])
-    report_prompt = (
-        "你是归档机器人。根据【对话历史】生成 Markdown 会话总结报告，必须包含两个段落："
-        "【核心问题】、【最终结论】；语言简洁明确。\n\n"
-        f"【对话历史】:\n{chat_history_str}\n\n请输出报告："
-    )
-    markdown_report = await call_vllm(report_prompt, temperature=0.2)
-
-    archive_payload = {
-        "archive_id": f"archive-{uuid.uuid4()}",
-        "archive_type": request.archive_type,
-        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "source_document_id": doc_id,
-        "generated_report_markdown": markdown_report,
-        "model_version": "Baichuan-7B-v1.0-RAG-v3.1",
-    }
-
+    archive_payload = await build_archive_payload(request.document_id, request.archive_type)
     return {
         "success": True,
         "message": "报告已生成。以下是准备归档到区块链的数据包。",

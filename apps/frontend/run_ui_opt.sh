@@ -3,8 +3,15 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BACKEND_DIR="$(cd "$SCRIPT_DIR/../backend" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-PYTHON_BIN="${PYTHON_BIN:-python}"
+if [[ -z "${PYTHON_BIN:-}" ]]; then
+  if [[ -x "$PROJECT_ROOT/.venv/bin/python" ]]; then
+    PYTHON_BIN="$PROJECT_ROOT/.venv/bin/python"
+  else
+    PYTHON_BIN="python"
+  fi
+fi
 BACKEND_HOST="${BACKEND_HOST:-0.0.0.0}"
 BACKEND_BASE_HOST="${BACKEND_BASE_HOST:-127.0.0.1}"
 FRONTEND_HOST="${FRONTEND_HOST:-0.0.0.0}"
